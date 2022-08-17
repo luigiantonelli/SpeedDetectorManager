@@ -20,7 +20,20 @@
         <module>SpeedDetectorAnalyzer</module>
         <module>FinesManagement</module>
         <module>PublicAdministrationInterface</module>
+        <module>commons</module>
+        <module>SpeedCamera</module>
     </modules>
+
+    <profiles>
+        <profile>
+            <id>ci</id>
+            <modules>
+                <module>SpeedDetectorAnalyzer</module>
+                <module>FinesManagement</module>
+                <module>commons</module>
+            </modules>
+        </profile>
+    </profiles>
 
     <properties>
         <maven.compiler.source>18</maven.compiler.source>
