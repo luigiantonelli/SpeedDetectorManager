@@ -1,6 +1,6 @@
 //package com.uniroma1.finesmanagement.listner;
 //
-//import com.uniroma1.finesmanagement.model.Detection;
+//import entity.Detection;
 //
 //import javax.jms.*;
 //import javax.naming.Context;

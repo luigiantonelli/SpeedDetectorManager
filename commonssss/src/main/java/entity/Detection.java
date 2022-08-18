@@ -1,4 +1,4 @@
-package com.uniroma1.finesmanagement.model;
+package entity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,25 +12,25 @@ import javax.persistence.*;
 @ToString
 @NoArgsConstructor
 
-//@Entity
-//@Table(name = "detections")
+@Entity
+@Table(name = "detections")
 public class Detection {
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-//    @Column
+    @Column(name = "speed_value")
     private int speedValue;
 
-//    @Column
+    @Column(name = "license_plate")
     private String licensePlate;
 
-//    @Column
+    @Column(name = "car_types")
     private String carTypes;
 
-//    @Column
+    @Column
     private String city;
 
-//    @Column
+    @Column
     private String roadTypes;
 }

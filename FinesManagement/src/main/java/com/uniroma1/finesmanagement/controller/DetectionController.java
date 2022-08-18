@@ -4,7 +4,7 @@
 //import java.util.List;
 //import java.util.Optional;
 //
-//import com.uniroma1.finesmanagement.model.Detection;
+//import entity.Detection;
 //import com.uniroma1.finesmanagement.repository.DetectionRepository;
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.http.HttpStatus;

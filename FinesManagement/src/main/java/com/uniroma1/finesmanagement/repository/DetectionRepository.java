@@ -1,6 +1,6 @@
 //package com.uniroma1.finesmanagement.repository;
 //
-//import com.uniroma1.finesmanagement.model.Detection;
+//import entity.Detection;
 //import org.springframework.data.jpa.repository.JpaRepository;
 //import org.springframework.stereotype.Repository;
 //

@@ -1,6 +1,6 @@
 //package com.uniroma1.finesmanagement.receiver;
 //
-//import com.uniroma1.finesmanagement.model.Detection;
+//import entity.Detection;
 //import com.uniroma1.finesmanagement.model.Email;
 //import com.uniroma1.finesmanagement.repository.DetectionRepository;
 //import org.springframework.beans.factory.annotation.Autowired;
