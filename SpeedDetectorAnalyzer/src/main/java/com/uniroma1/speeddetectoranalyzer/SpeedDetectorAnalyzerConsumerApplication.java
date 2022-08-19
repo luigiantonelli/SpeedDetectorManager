@@ -2,8 +2,8 @@ package com.uniroma1.speeddetectoranalyzer;
 
 
 
+import com.uniroma1.commons.utility.ParamConnection;
 import com.uniroma1.speeddetectoranalyzer.consumer.Consumer;
-import utility.ParamConnection;
 
 import javax.jms.JMSException;
 import java.util.concurrent.ExecutorService;

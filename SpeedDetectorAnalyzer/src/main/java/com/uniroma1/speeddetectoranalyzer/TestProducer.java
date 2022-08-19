@@ -4,8 +4,8 @@ package com.uniroma1.speeddetectoranalyzer; /**
 
 
 
+import com.uniroma1.commons.utility.ParamConnection;
 import com.uniroma1.speeddetectoranalyzer.producer.Producer;
-import utility.ParamConnection;
 
 import javax.jms.JMSException;
 

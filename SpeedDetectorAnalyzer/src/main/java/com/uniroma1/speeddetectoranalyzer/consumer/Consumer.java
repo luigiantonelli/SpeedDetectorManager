@@ -1,5 +1,8 @@
 package com.uniroma1.speeddetectoranalyzer.consumer;
 
+import com.uniroma1.commons.utility.ParamConnection;
+import com.uniroma1.speeddetectoranalyzer.handler.MessageHandler;
+import com.uniroma1.speeddetectoranalyzer.model.Detection;
 import org.apache.activemq.ActiveMQConnectionFactory;
 
 import javax.jms.*;
@@ -57,6 +60,18 @@ public class Consumer {
 					TextMessage textMessage = (TextMessage) message;
 					String text = textMessage.getText();
 					System.out.println(Thread.currentThread().getName() + " | Receive JMS | text = " + text );
+					MessageHandler messageHandler = new MessageHandler();
+					//gestione della rilevazione
+					Detection detection = (Detection) messageHandler.handleMessage(text, Detection.class);
+					if(detection.getSpeedValue() > 130) {
+						messageHandler.sendObject(detection, ParamConnection.SPEED_DETECTION_QUEUE);
+						System.out.println("Sent message to SpeedDetection");
+					}
+
+					else {
+						messageHandler.sendObject(detection, ParamConnection.STATISTIC_QUEUE);
+						System.out.println("Sent message to Statistic");
+					}
 				} else {
 					System.out.println(Thread.currentThread().getName() + " | message: " + message);
 				}
