@@ -4,51 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="84531fa0-875c-4754-b824-e5b111fbab68" name="Changes" comment="fixed project">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FinesManagement/src/main/java/it/uniroma1/finesmanagement/FinesManagementApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FinesManagement/src/main/java/it/uniroma1/finesmanagement/TestConsumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FinesManagement/src/main/java/it/uniroma1/finesmanagement/consumer/Consumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FinesManagement/src/main/java/it/uniroma1/finesmanagement/consumer/DetectionConsumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FinesManagement/src/main/java/it/uniroma1/finesmanagement/controller/DetectionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FinesManagement/src/main/java/it/uniroma1/finesmanagement/listner/DetectionListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FinesManagement/src/main/java/it/uniroma1/finesmanagement/receiver/DetectionReceiver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FinesManagement/src/main/java/it/uniroma1/finesmanagement/repository/DetectionRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FinesManagement/src/test/java/it/uniroma1/finesmanagement/FinesManagementApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpeedCamera/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpeedCamera/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpeedCamera/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpeedCamera/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpeedCamera/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpeedCamera/src/main/java/it/uniroma1/speedcamera/SpeedCameraApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpeedCamera/src/main/java/it/uniroma1/speedcamera/producer/Producer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpeedCamera/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpeedCamera/src/test/java/it/uniroma1/speedcamera/SpeedCameraApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpeedDetectorAnalyzer/src/main/java/it/uniroma1/speeddetectoranalyzer/SpeedDetectorAnalyzerApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpeedDetectorAnalyzer/src/main/java/it/uniroma1/speeddetectoranalyzer/SpeedDetectorAnalyzerConsumerApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpeedDetectorAnalyzer/src/main/java/it/uniroma1/speeddetectoranalyzer/TestProducer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpeedDetectorAnalyzer/src/main/java/it/uniroma1/speeddetectoranalyzer/consumer/Consumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpeedDetectorAnalyzer/src/main/java/it/uniroma1/speeddetectoranalyzer/handler/MessageHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpeedDetectorAnalyzer/src/main/java/it/uniroma1/speeddetectoranalyzer/producer/DetectionProducer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpeedDetectorAnalyzer/src/main/java/it/uniroma1/speeddetectoranalyzer/producer/Producer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpeedDetectorAnalyzer/src/test/java/it/uniroma1/speeddetectoranalyzer/SpeedDetectorAnalyzerApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/commons/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/commons/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/commons/src/main/java/it/uniroma1/commons/CommonsApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/commons/src/main/java/it/uniroma1/commons/entity/Fine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/commons/src/main/java/it/uniroma1/commons/entity/SpeedCamera.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/commons/src/main/java/it/uniroma1/commons/queueObject/Detection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/commons/src/main/java/it/uniroma1/commons/repository/FineRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/commons/src/main/java/it/uniroma1/commons/repository/SpeedCameraRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/commons/src/main/java/it/uniroma1/commons/utility/ParamConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/commons/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/commons/src/test/java/it/uniroma1/commons/CommonsApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/PublicAdministrationInterface/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="84531fa0-875c-4754-b824-e5b111fbab68" name="Changes" comment="fixed project 2.0" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -133,7 +89,7 @@
       <option name="presentableId" value="Default" />
       <updated>1661001676004</updated>
       <workItem from="1661001677436" duration="651000" />
-      <workItem from="1661002515964" duration="730000" />
+      <workItem from="1661002515964" duration="800000" />
     </task>
     <task id="LOCAL-00001" summary="fixed project">
       <created>1661002616563</created>
@@ -142,7 +98,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661002616563</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fixed project 2.0">
+      <created>1661003302006</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1661003302006</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,6 +124,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fixed project" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed project" />
+    <MESSAGE value="fixed project 2.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed project 2.0" />
   </component>
 </project>
