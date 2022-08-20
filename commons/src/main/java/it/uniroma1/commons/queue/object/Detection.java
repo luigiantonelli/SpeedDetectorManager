@@ -1,5 +1,8 @@
-package it.uniroma1.commons.queueObject;
+package it.uniroma1.commons.queue.object;
 
+import it.uniroma1.commons.queue.enums.CarType;
+import it.uniroma1.commons.queue.enums.FuelType;
+import it.uniroma1.commons.queue.enums.RoadType;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -19,9 +22,11 @@ public class Detection {
 
     private String licensePlate;
 
-    private String carTypes;
+    private CarType carType;
+
+    private FuelType fuelType;
 
     private String city;
 
-    private int roadTypes;
+    private RoadType roadType;
 }

@@ -1,7 +1,10 @@
 package it.uniroma1.speedcamera;
 
 import com.google.gson.Gson;
-import it.uniroma1.commons.queueObject.Detection;
+import it.uniroma1.commons.queue.enums.CarType;
+import it.uniroma1.commons.queue.enums.FuelType;
+import it.uniroma1.commons.queue.enums.RoadType;
+import it.uniroma1.commons.queue.object.Detection;
 import it.uniroma1.commons.utility.ParamConnection;
 import it.uniroma1.speedcamera.producer.Producer;
 import javax.jms.JMSException;
@@ -14,7 +17,7 @@ public class SpeedCameraApplication {
 		long i = 0;
 		while(true) {
 			try {
-				Thread.sleep(5000);
+				Thread.sleep(8000);
 			}
 			catch(Exception e) {
 				e.printStackTrace();
@@ -25,6 +28,9 @@ public class SpeedCameraApplication {
 			detection.setCity(generateRandomCity());
 			detection.setSpeedValue(generateRandomSpeed());
 			detection.setLicensePlate(generateRandomLicensePlate());
+			detection.setCarType(CarType.getRandomCarType());
+			detection.setFuelType(FuelType.getRandomFuelType());
+			detection.setRoadType(RoadType.getRandomRoadType());
 
 			Gson gson = new Gson();
 
