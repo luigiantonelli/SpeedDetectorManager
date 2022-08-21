@@ -5,48 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59f6767e-00c2-4df1-af5d-1055c2838036" name="Changes" comment="merged PublicAdministration">
-      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/.npmrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/.prettierrc.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/LICENSE.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/frontend/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/frontend/themes/mytodo/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/frontend/themes/mytodo/theme.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/data/AbstractEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/data/entity/Fine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/data/entity/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/data/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/data/service/AuthService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/data/service/FineRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/data/service/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/admin/AdminView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/fines/FinesView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/fines/GestiteView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/fines/NuoveView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/home/HomeView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/login/ActivationView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/login/LoginView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/logout/LogoutView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/main/MainView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/resources/META-INF/resources/icons/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/resources/META-INF/resources/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/resources/META-INF/resources/images/repita.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/resources/banner.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/types.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/webpack.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FinesManagement/src/main/java/it/uniroma1/finesmanagement/consumer/ConsumerSpringFM.java" beforeDir="false" afterPath="$PROJECT_DIR$/FinesManagement/src/main/java/it/uniroma1/finesmanagement/consumer/ConsumerSpringFM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/src/main/java/it/uniroma1/commons/queue/config/SpringActiveMQConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/src/main/java/it/uniroma1/commons/queue/config/SpringActiveMQConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,22 +51,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/lory2/Desktop/Lorenzo Uni/Laboratory of Advanced Programming/SpeedDetectorManager/PublicAdministrationInterface&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;28911c54eda593509c0868141cd754fc&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/lory2/Desktop/Lorenzo Uni/Laboratory of Advanced Programming/SpeedDetectorManager/FinesManagement/src/main/java/it/uniroma1/finesmanagement",
+    "nodejs_package_manager_path": "npm",
+    "spring.configuration.checksum": "28911c54eda593509c0868141cd754fc"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\lory2\Desktop\Lorenzo Uni\Laboratory of Advanced Programming\SpeedDetectorManager\FinesManagement\src\main\java\it\uniroma1\finesmanagement" />
       <recent name="C:\Users\lory2\Desktop\Lorenzo Uni\Laboratory of Advanced Programming\SpeedDetectorManager\PublicAdministrationInterface" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -117,7 +79,7 @@
       <command value="mvn  clean install -DskipTests" />
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.Application">
+  <component name="RunManager" selected="Spring Boot.FinesManagementApplication">
     <configuration name="SpeedCameraApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="it.uniroma1.speedcamera.SpeedCameraApplication" />
       <module name="SpeedCamera" />
@@ -190,6 +152,8 @@
       <workItem from="1661088746894" duration="3071000" />
       <workItem from="1661091842713" duration="1206000" />
       <workItem from="1661093080162" duration="1489000" />
+      <workItem from="1661094605662" duration="216000" />
+      <workItem from="1661114307175" duration="1356000" />
     </task>
     <task id="LOCAL-00001" summary="merged and added DetectionExt">
       <created>1661090949223</created>
@@ -205,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661094120477</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="merged PublicAdministration">
+      <created>1661094802661</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1661094802661</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
