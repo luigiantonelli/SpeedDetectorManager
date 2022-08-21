@@ -1,5 +1,8 @@
 package it.uniroma1.finesmanagement.consumer;
 
+import it.uniroma1.commons.queue.handler.DetectionHandler;
+import it.uniroma1.commons.queue.handler.MessageHandler;
+import it.uniroma1.commons.queue.object.Detection;
 import org.apache.activemq.ActiveMQConnectionFactory;
 import javax.jms.*;
 
@@ -56,6 +59,11 @@ public class Consumer {
 					TextMessage textMessage = (TextMessage) message;
 					String text = textMessage.getText();
 					System.out.println(Thread.currentThread().getName() + " | Receive JMS | text = " + text );
+					//Fare gestione delle detection, aggiungi oggetto multa al database
+//					DetectionHandler detectionHandler = new DetectionHandler();
+//					MessageHandler messageHandler = new MessageHandler();
+//					Detection detection = (Detection) messageHandler.handleMessage(text, Detection.class);
+//					detectionHandler.handle(detection);
 				} else {
 					System.out.println(Thread.currentThread().getName() + " | message: " + message);
 				}

@@ -1,4 +1,4 @@
-package it.uniroma1.speeddetectoranalyzer.producer;
+package it.uniroma1.commons.queue.producer;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 

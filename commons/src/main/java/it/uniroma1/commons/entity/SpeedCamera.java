@@ -22,8 +22,8 @@ public class SpeedCamera {
     @OneToMany(mappedBy = "speedCamera")
     private List<Fine> fines;
 
-    @Column(name = "region")
-    private String region;
+    @Column(name = "city")
+    private String city;
 
     @Column(name = "road_type")
     private String roadType;
