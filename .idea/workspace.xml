@@ -4,56 +4,57 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="59f6767e-00c2-4df1-af5d-1055c2838036" name="Changes" comment="merged and added DetectionExt">
+    <list default="true" id="59f6767e-00c2-4df1-af5d-1055c2838036" name="Changes" comment="merged PublicAdministration">
+      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/.npmrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/.prettierrc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/LICENSE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/frontend/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/frontend/themes/mytodo/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/frontend/themes/mytodo/theme.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/data/AbstractEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/data/entity/Fine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/data/entity/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/data/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/data/service/AuthService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/data/service/FineRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/data/service/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/admin/AdminView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/fines/FinesView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/fines/GestiteView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/fines/NuoveView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/home/HomeView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/login/ActivationView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/login/LoginView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/logout/LogoutView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/main/MainView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/resources/META-INF/resources/icons/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/resources/META-INF/resources/images/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/resources/META-INF/resources/images/repita.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/resources/banner.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/types.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/webpack.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/.npmrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/.prettierrc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/.vscode/extensions.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/.vscode/settings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/LICENSE.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/frontend/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/frontend/themes/mytodo/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/frontend/themes/mytodo/theme.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/Application.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/data/AbstractEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/data/entity/Fine.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/data/entity/Role.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/data/entity/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/data/service/AuthService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/data/service/FineRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/data/service/UserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/admin/AdminView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/fines/FinesView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/fines/GestiteView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/fines/NuoveView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/home/HomeView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/login/ActivationView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/login/LoginView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/logout/LogoutView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/main/MainView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/resources/META-INF/resources/icons/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/resources/META-INF/resources/images/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/resources/META-INF/resources/images/repita.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/resources/banner.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/types.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/webpack.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="origin/master" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -188,7 +189,7 @@
       <workItem from="1661087171987" duration="1546000" />
       <workItem from="1661088746894" duration="3071000" />
       <workItem from="1661091842713" duration="1206000" />
-      <workItem from="1661093080162" duration="996000" />
+      <workItem from="1661093080162" duration="1489000" />
     </task>
     <task id="LOCAL-00001" summary="merged and added DetectionExt">
       <created>1661090949223</created>
@@ -197,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661090949223</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="merged PublicAdministration">
+      <created>1661094120477</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1661094120477</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,7 +223,10 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="merged and added DetectionExt" />
-    <option name="LAST_COMMIT_MESSAGE" value="merged and added DetectionExt" />
+    <MESSAGE value="merged PublicAdministration" />
+    <option name="LAST_COMMIT_MESSAGE" value="merged PublicAdministration" />
   </component>
 </project>
