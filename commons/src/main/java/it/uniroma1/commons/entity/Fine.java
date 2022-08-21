@@ -17,7 +17,8 @@ import java.util.Date;
 @Table(name = "fines")
 public class Fine {
     @Id
-    private String fineCode;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
     @ManyToOne
     @JoinColumn(name = "speed_camera_id", referencedColumnName ="id")

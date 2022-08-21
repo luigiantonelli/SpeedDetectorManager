@@ -8,10 +8,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="FinesManagement" />
-        <module name="SpeedCameras" />
         <module name="SpeedDetectorAnalyzer" />
-        <module name="commons" />
         <module name="PublicAdministrationInterface" />
+        <module name="commons" />
         <module name="SpeedCamera" />
       </profile>
     </annotationProcessing>
@@ -21,7 +20,6 @@
       <module name="FinesManagement" options="-parameters" />
       <module name="PublicAdministrationInterface" options="-parameters" />
       <module name="SpeedCamera" options="-parameters" />
-      <module name="SpeedCameras" options="-parameters" />
       <module name="SpeedDetectorAnalyzer" options="-parameters" />
       <module name="commons" options="-parameters" />
     </option>

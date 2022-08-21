@@ -9,4 +9,6 @@ public class ParamConnection {
 	public final static String STATISTIC_QUEUE = "statistic_queue";
 
 	public final static String SPEED_DETECTION_QUEUE = "speed_detection_queue";
+
+	public final static String ADMIN_DETECTION_QUEUE = "admin_detection_queue";
 }

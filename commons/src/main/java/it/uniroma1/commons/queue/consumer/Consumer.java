@@ -1,9 +1,5 @@
-package it.uniroma1.speeddetectoranalyzer.consumer;
+package it.uniroma1.commons.queue.consumer;
 
-import it.uniroma1.commons.queue.enums.RoadType;
-import it.uniroma1.commons.queue.handler.MessageHandler;
-import it.uniroma1.commons.queue.object.Detection;
-import it.uniroma1.commons.utility.ParamConnection;
 import org.apache.activemq.ActiveMQConnectionFactory;
 
 import javax.jms.*;
@@ -61,20 +57,11 @@ public class Consumer {
 					TextMessage textMessage = (TextMessage) message;
 					String text = textMessage.getText();
 					System.out.println(Thread.currentThread().getName() + " | Receive JMS | text = " + text );
-					MessageHandler messageHandler = new MessageHandler();
-					//gestione della rilevazione ed inoltra alla coda opportuna
-					Detection detection = (Detection) messageHandler.handleMessage(text, Detection.class);
-					if(detection.getRoadType() == RoadType.HIGHWAY && detection.getSpeedValue() > RoadType.HIGHWAY.getThreshold() ||
-						detection.getRoadType() == RoadType.THROUGHWAY && detection.getSpeedValue() > RoadType.THROUGHWAY.getThreshold() ||
-							detection.getRoadType() == RoadType.CITY_ROAD && detection.getSpeedValue() > RoadType.CITY_ROAD.getThreshold()) {
-						messageHandler.sendObject(detection, ParamConnection.SPEED_DETECTION_QUEUE);
-						System.out.println("Sent message to SpeedDetection");
-					}
-
-					else {
-						messageHandler.sendObject(detection, ParamConnection.STATISTIC_QUEUE);
-						System.out.println("Sent message to Statistic");
-					}
+					//Fare gestione delle detection, aggiungi oggetto multa al database
+//					DetectionHandler detectionHandler = new DetectionHandler();
+//					MessageHandler messageHandler = new MessageHandler();
+//					Detection detection = (Detection) messageHandler.handleMessage(text, Detection.class);
+//					detectionHandler.handle(detection);
 				} else {
 					System.out.println(Thread.currentThread().getName() + " | message: " + message);
 				}

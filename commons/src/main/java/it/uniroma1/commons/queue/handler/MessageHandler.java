@@ -1,8 +1,8 @@
-package it.uniroma1.speeddetectoranalyzer.handler;
+package it.uniroma1.commons.queue.handler;
 
 import com.google.gson.Gson;
+import it.uniroma1.commons.queue.producer.Producer;
 import it.uniroma1.commons.utility.ParamConnection;
-import it.uniroma1.speeddetectoranalyzer.producer.Producer;
 
 public class MessageHandler {
     private Gson gson = new Gson();
