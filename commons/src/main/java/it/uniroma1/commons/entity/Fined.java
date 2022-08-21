@@ -13,19 +13,18 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
-@Table(name = "speed_cameras")
-public class SpeedCamera {
+@Table(name = "fined")
+public class Fined {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private String code;
 
-    @OneToMany(mappedBy = "speedCamera")
+    @OneToMany(mappedBy = "receiver")
     private List<Fine> fines;
 
-    @Column(name = "region")
-    private String region;
+    @Column(name = "name")
+    private String name;
 
-    @Column(name = "road_type")
-    private String roadType;
+    @Column(name = "surname")
+    private String surname;
 
 }

@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -16,14 +17,19 @@ import javax.persistence.*;
 @Table(name = "fines")
 public class Fine {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-
-    @Column(name = "fine_code")
     private String fineCode;
 
     @ManyToOne
+    @JoinColumn(name = "speed_camera_id", referencedColumnName ="id")
     private SpeedCamera speedCamera;
+
+    @ManyToOne
+    @JoinColumn(name = "manager_code", referencedColumnName ="username")
+    private User user;
+
+    @ManyToOne
+    @JoinColumn(name = "code_receiver", referencedColumnName ="code")
+    private Fined receiver;
 
     @Column(name = "pdf_link")
     private RouterLink pdfLink;
@@ -34,10 +40,10 @@ public class Fine {
     @Column(name = "amount")
     private int amount;
 
-    @Column(name = "receiver")
-    private String receiver;
-
     @Column(name = "car_plate")
     private String carPlate;
+
+    @Column(name = "date")
+    private Date date;
 
 }
