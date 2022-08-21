@@ -4,36 +4,51 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="59f6767e-00c2-4df1-af5d-1055c2838036" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/FinesManagement/src/main/java/it/uniroma1/finesmanagement/consumer/ConsumerSpringFM.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/commons/src/main/java/it/uniroma1/commons/queue/config/SpringActiveMQConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/commons/src/main/java/it/uniroma1/commons/queue/consumer/Consumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/commons/src/main/java/it/uniroma1/commons/queue/handler/DetectionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/commons/src/main/java/it/uniroma1/commons/queue/object/DetectionExt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/commons/src/main/java/it/uniroma1/commons/queue/object/Fined.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+    <list default="true" id="59f6767e-00c2-4df1-af5d-1055c2838036" name="Changes" comment="merged and added DetectionExt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinesManagement/src/main/java/it/uniroma1/finesmanagement/FinesManagementApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/FinesManagement/src/main/java/it/uniroma1/finesmanagement/FinesManagementApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinesManagement/src/main/java/it/uniroma1/finesmanagement/TestConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/FinesManagement/src/main/java/it/uniroma1/finesmanagement/FinesManagementConsumerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinesManagement/src/main/java/it/uniroma1/finesmanagement/consumer/Consumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/FinesManagement/src/main/java/it/uniroma1/finesmanagement/consumer/Consumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinesManagement/src/main/java/it/uniroma1/finesmanagement/consumer/DetectionConsumer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinesManagement/src/main/java/it/uniroma1/finesmanagement/listner/DetectionListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinesManagement/src/main/java/it/uniroma1/finesmanagement/receiver/DetectionReceiver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinesManagement/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/FinesManagement/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpeedDetectorAnalyzer/src/main/java/it/uniroma1/speeddetectoranalyzer/TestProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpeedDetectorAnalyzer/src/main/java/it/uniroma1/speeddetectoranalyzer/SpeedDetectorAnalyzerProducerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpeedDetectorAnalyzer/src/main/java/it/uniroma1/speeddetectoranalyzer/consumer/Consumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpeedDetectorAnalyzer/src/main/java/it/uniroma1/speeddetectoranalyzer/consumer/Consumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpeedDetectorAnalyzer/src/main/java/it/uniroma1/speeddetectoranalyzer/handler/MessageHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/src/main/java/it/uniroma1/commons/queue/handler/MessageHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpeedDetectorAnalyzer/src/main/java/it/uniroma1/speeddetectoranalyzer/producer/DetectionProducer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpeedDetectorAnalyzer/src/main/java/it/uniroma1/speeddetectoranalyzer/producer/Producer.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/src/main/java/it/uniroma1/commons/queue/producer/Producer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/commons/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/src/main/java/it/uniroma1/commons/CommonsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/src/main/java/it/uniroma1/commons/CommonsApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/src/main/java/it/uniroma1/commons/entity/Fine.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/src/main/java/it/uniroma1/commons/entity/Fine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/src/main/java/it/uniroma1/commons/entity/SpeedCamera.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/src/main/java/it/uniroma1/commons/entity/SpeedCamera.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/src/main/java/it/uniroma1/commons/queue/GlobalValues.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/src/main/java/it/uniroma1/commons/queue/GlobalValues.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/src/main/java/it/uniroma1/commons/queue/enums/RoadType.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/src/main/java/it/uniroma1/commons/queue/enums/RoadType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/src/main/java/it/uniroma1/commons/utility/ParamConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/src/main/java/it/uniroma1/commons/utility/ParamConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/commons/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/.npmrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/.prettierrc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/.vscode/extensions.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/frontend/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/frontend/themes/mytodo/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/frontend/themes/mytodo/theme.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/data/AbstractEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/data/entity/Fine.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/data/entity/Role.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/data/entity/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/data/service/AuthService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/data/service/FineRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/data/service/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/admin/AdminView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/fines/FinesView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/fines/GestiteView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/fines/NuoveView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/home/HomeView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/login/ActivationView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/login/LoginView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/logout/LogoutView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/main/MainView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/resources/META-INF/resources/icons/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/resources/META-INF/resources/images/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/resources/META-INF/resources/images/repita.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/resources/banner.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/types.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/webpack.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,21 +89,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/lory2/Desktop/Lorenzo Uni/Laboratory of Advanced Programming",
-    "nodejs_package_manager_path": "npm",
-    "spring.configuration.checksum": "28911c54eda593509c0868141cd754fc"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/lory2/Desktop/Lorenzo Uni/Laboratory of Advanced Programming/SpeedDetectorManager/PublicAdministrationInterface&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;28911c54eda593509c0868141cd754fc&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\lory2\Desktop\Lorenzo Uni\Laboratory of Advanced Programming\SpeedDetectorManager\PublicAdministrationInterface" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="it.uniroma1.commons.queue.object" />
     </key>
@@ -98,7 +116,7 @@
       <command value="mvn  clean install -DskipTests" />
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.FinesManagementApplication">
+  <component name="RunManager" selected="Spring Boot.Application">
     <configuration name="SpeedCameraApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="it.uniroma1.speedcamera.SpeedCameraApplication" />
       <module name="SpeedCamera" />
@@ -126,6 +144,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="PublicAdministrationInterface" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.application.Application" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.application.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="FinesManagementApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="ACTIVE_PROFILES" />
       <module name="FinesManagement" />
@@ -140,6 +171,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.Application" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -150,8 +186,18 @@
       <option name="presentableId" value="Default" />
       <updated>1661087166878</updated>
       <workItem from="1661087171987" duration="1546000" />
-      <workItem from="1661088746894" duration="1932000" />
+      <workItem from="1661088746894" duration="3071000" />
+      <workItem from="1661091842713" duration="1206000" />
+      <workItem from="1661093080162" duration="996000" />
     </task>
+    <task id="LOCAL-00001" summary="merged and added DetectionExt">
+      <created>1661090949223</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1661090949223</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,5 +213,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="merged and added DetectionExt" />
+    <option name="LAST_COMMIT_MESSAGE" value="merged and added DetectionExt" />
   </component>
 </project>
