@@ -7,7 +7,8 @@ public enum FuelType {
     DIESEL,
     LPG,
     ETHANOL,
-    HYBRID;
+    HYBRID,
+    FULL_ELECTRIC;
 
     public static FuelType getRandomFuelType() {
         Random random = new Random();

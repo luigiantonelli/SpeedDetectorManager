@@ -5,6 +5,7 @@ import javax.jms.Queue;
 import it.uniroma1.commons.utility.ParamConnection;
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.apache.activemq.command.ActiveMQQueue;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,8 +20,15 @@ public class SpringActiveMQConfig {
 	private String brokerUrl;
 
 	@Bean
-	public Queue queue() {
+	@Qualifier("speed_queue")
+	public Queue queueSpeed() {
 		return new ActiveMQQueue(ParamConnection.SPEED_DETECTION_QUEUE);
+	}
+
+	@Bean
+	@Qualifier("admin_queue")
+	public Queue queueAdmin() {
+		return new ActiveMQQueue(ParamConnection.ADMIN_DETECTION_QUEUE);
 	}
 
 	@Bean

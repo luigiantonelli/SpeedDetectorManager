@@ -1,4 +1,4 @@
-package it.uniroma1.commons.entity;
+package it.uniroma1.commons.enums;
 
 public enum Role {
 
