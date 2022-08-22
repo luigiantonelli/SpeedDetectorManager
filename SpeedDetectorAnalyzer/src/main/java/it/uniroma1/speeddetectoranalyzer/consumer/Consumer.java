@@ -71,10 +71,9 @@ public class Consumer {
 						System.out.println("Sent message to SpeedDetection");
 					}
 
-					else {
-						messageHandler.sendObject(detection, ParamConnection.STATISTIC_QUEUE);
-						System.out.println("Sent message to Statistic");
-					}
+					//mando a statistics
+					messageHandler.sendObject(detection, ParamConnection.STATISTIC_QUEUE);
+					System.out.println("Sent message to Statistic");
 				} else {
 					System.out.println(Thread.currentThread().getName() + " | message: " + message);
 				}

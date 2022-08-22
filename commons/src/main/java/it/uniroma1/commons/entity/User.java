@@ -1,5 +1,6 @@
 package it.uniroma1.commons.entity;
 
+import it.uniroma1.commons.enums.Role;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

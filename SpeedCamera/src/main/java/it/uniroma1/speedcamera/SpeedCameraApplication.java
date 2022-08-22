@@ -23,6 +23,7 @@ public class SpeedCameraApplication {
 				e.printStackTrace();
 			}
 			Detection detection = new Detection();
+
 			detection.setId(i);
 			detection.setSpeedCameraId(Long.parseLong(args[0]));
 			detection.setCity(generateRandomCity());

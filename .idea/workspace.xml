@@ -4,10 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="59f6767e-00c2-4df1-af5d-1055c2838036" name="Changes" comment="merged PublicAdministration">
+    <list default="true" id="59f6767e-00c2-4df1-af5d-1055c2838036" name="Changes" comment="added admin queue">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinesManagement/src/main/java/it/uniroma1/finesmanagement/consumer/ConsumerSpringFM.java" beforeDir="false" afterPath="$PROJECT_DIR$/FinesManagement/src/main/java/it/uniroma1/finesmanagement/consumer/ConsumerSpringFM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/src/main/java/it/uniroma1/commons/queue/config/SpringActiveMQConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/src/main/java/it/uniroma1/commons/queue/config/SpringActiveMQConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpeedCamera/src/main/java/it/uniroma1/speedcamera/SpeedCameraApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpeedCamera/src/main/java/it/uniroma1/speedcamera/SpeedCameraApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpeedDetectorAnalyzer/src/main/java/it/uniroma1/speeddetectoranalyzer/SpeedDetectorAnalyzerApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpeedDetectorAnalyzer/src/main/java/it/uniroma1/speeddetectoranalyzer/SpeedDetectorAnalyzerProducerApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpeedDetectorAnalyzer/src/main/java/it/uniroma1/speeddetectoranalyzer/consumer/Consumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpeedDetectorAnalyzer/src/main/java/it/uniroma1/speeddetectoranalyzer/consumer/Consumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/src/main/java/it/uniroma1/commons/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/src/main/java/it/uniroma1/commons/enums/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/src/main/java/it/uniroma1/commons/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/src/main/java/it/uniroma1/commons/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/src/main/java/it/uniroma1/commons/queue/enums/FuelType.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/src/main/java/it/uniroma1/commons/queue/enums/FuelType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/src/main/java/it/uniroma1/commons/repository/FineRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/src/main/java/it/uniroma1/commons/repository/FineRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,20 +57,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/lory2/Desktop/Lorenzo Uni/Laboratory of Advanced Programming/SpeedDetectorManager/FinesManagement/src/main/java/it/uniroma1/finesmanagement",
-    "nodejs_package_manager_path": "npm",
-    "spring.configuration.checksum": "28911c54eda593509c0868141cd754fc"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/lory2/Desktop/Lorenzo Uni/Laboratory of Advanced Programming/SpeedDetectorManager/FinesManagement/src/main/java/it/uniroma1/finesmanagement&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;28911c54eda593509c0868141cd754fc&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\lory2\Desktop\Lorenzo Uni\Laboratory of Advanced Programming\SpeedDetectorManager\FinesManagement\src\main\java\it\uniroma1\finesmanagement" />
@@ -79,11 +85,11 @@
       <command value="mvn  clean install -DskipTests" />
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.FinesManagementApplication">
+  <component name="RunManager" selected="Application.SpeedCameraApplication">
     <configuration name="SpeedCameraApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="it.uniroma1.speedcamera.SpeedCameraApplication" />
       <module name="SpeedCamera" />
-      <option name="PROGRAM_PARAMETERS" value="0" />
+      <option name="PROGRAM_PARAMETERS" value="1" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="it.uniroma1.speedcamera.*" />
@@ -153,7 +159,8 @@
       <workItem from="1661091842713" duration="1206000" />
       <workItem from="1661093080162" duration="1489000" />
       <workItem from="1661094605662" duration="216000" />
-      <workItem from="1661114307175" duration="1356000" />
+      <workItem from="1661114307175" duration="1699000" />
+      <workItem from="1661155135393" duration="2879000" />
     </task>
     <task id="LOCAL-00001" summary="merged and added DetectionExt">
       <created>1661090949223</created>
@@ -176,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661094802661</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added admin queue">
+      <created>1661115995392</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1661115995393</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,6 +212,7 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="merged and added DetectionExt" />
     <MESSAGE value="merged PublicAdministration" />
-    <option name="LAST_COMMIT_MESSAGE" value="merged PublicAdministration" />
+    <MESSAGE value="added admin queue" />
+    <option name="LAST_COMMIT_MESSAGE" value="added admin queue" />
   </component>
 </project>
