@@ -14,7 +14,7 @@ import java.util.List;
 @Setter
 @Entity
 @Table(name = "fined")
-public class Fined {
+public class Person {
     @Id
     private String code;
 

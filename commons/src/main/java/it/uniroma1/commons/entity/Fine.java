@@ -30,7 +30,7 @@ public class Fine {
 
     @ManyToOne
     @JoinColumn(name = "code_receiver", referencedColumnName ="code")
-    private Fined receiver;
+    private Person receiver;
 
     @Column(name = "pdf_link")
     private RouterLink pdfLink;
