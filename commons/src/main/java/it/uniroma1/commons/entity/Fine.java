@@ -30,7 +30,11 @@ public class Fine {
 
     @ManyToOne
     @JoinColumn(name = "code_receiver", referencedColumnName ="code")
-    private Fined receiver;
+    private Person receiver;
+
+    @ManyToOne
+    @JoinColumn(name = "license_plate", referencedColumnName ="licensePlate")
+    private Car car;
 
     @Column(name = "pdf_link")
     private RouterLink pdfLink;
@@ -46,5 +50,4 @@ public class Fine {
 
     @Column(name = "date")
     private Date date;
-
 }

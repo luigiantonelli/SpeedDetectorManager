@@ -13,10 +13,10 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
-@Table(name = "fined")
-public class Fined {
+@Table(name = "person")
+public class Person {
     @Id
-    private String code;
+    private String fiscalCode;
 
     @OneToMany(mappedBy = "receiver")
     private List<Fine> fines;
@@ -26,5 +26,8 @@ public class Fined {
 
     @Column(name = "surname")
     private String surname;
+
+    @Column(name = "address")
+    private String address;
 
 }
