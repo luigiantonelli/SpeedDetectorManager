@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.apache.commons.codec.digest.DigestUtils;
 
 import javax.persistence.*;
 import java.util.List;
@@ -52,5 +53,13 @@ public class User {
     @ManyToOne
     @JoinColumn(name="creator_id",referencedColumnName = "username")
     private User creator;
+
+    public boolean checkPassword(String password) {
+        return DigestUtils.sha1Hex(password + passwordSalt).equals(passwordHash);
+    }
+
+    public boolean checkRegion(String region) {
+        return this.region == region;
+    }
 
 }

@@ -1,7 +1,5 @@
 package com.example.application.data.service;
 
-import com.example.application.data.entity.Role;
-import com.example.application.data.entity.User;
 import com.example.application.views.admin.AdminView;
 import com.example.application.views.fines.FinesView;
 import com.example.application.views.fines.GestiteView;
@@ -12,13 +10,20 @@ import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.router.RouteConfiguration;
 import com.vaadin.flow.server.VaadinSession;
+import it.uniroma1.commons.entity.User;
+import it.uniroma1.commons.enums.Role;
+import it.uniroma1.commons.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AuthService {
+    @Autowired
+    private UserRepository userRepository;
 
     public record AuthorizedRoute(String route, String name, Class<? extends Component> view) {
 
@@ -39,7 +44,8 @@ public class AuthService {
     public void authenticate(String username, String password, String region) throws AuthException {
         //User user = userRepository.getByUsername(username);
         //prendi utente dal database
-        User user = UserRepository.getByUsername(username);
+        Optional<User> optionalUser = userRepository.findById(username);
+        User user = optionalUser.isPresent()?optionalUser.get():null;
         if (user != null && user.checkPassword(password) && user.checkRegion(region)/*user.isActive()*/) {
             VaadinSession.getCurrent().setAttribute(User.class, user);  // FORSE DA TOGLIERE
             createRoutes(user.getRole());
