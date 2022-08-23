@@ -16,7 +16,7 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
-@Table(name = "speed_cameras")
+@Table(name = "car")
 public class Car {
     @Id
     private String licensePlate;
@@ -30,9 +30,13 @@ public class Car {
     @Column(name = "registration_date")
     private Date registrationDate;
 
-    @OneToMany(mappedBy = "speedCamera")
+    @OneToMany(mappedBy = "car")
     private List<Fine> fines;
 
     @Column(name = "road_type")
     private String roadType;
+
+    @OneToOne
+    @JoinColumn(name = "owner", referencedColumnName ="fiscalCode")
+    private Person owner;
 }

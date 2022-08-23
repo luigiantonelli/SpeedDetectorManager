@@ -146,6 +146,13 @@
             <type>maven-plugin</type>
         </dependency>
 
+        <dependency>
+            <groupId>it.uniroma1</groupId>
+            <artifactId>commons</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+
 
     </dependencies>
 

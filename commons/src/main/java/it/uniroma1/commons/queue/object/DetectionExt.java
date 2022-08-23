@@ -27,11 +27,9 @@ public class DetectionExt {
 
     private FuelType fuelType;
 
-    private String city;
+    private String region;
 
     private RoadType roadType;
 
-    private Fined fined;
-
-//    private Car car;
+    private boolean overcameLimit;
 }

@@ -34,7 +34,7 @@
             <groupId>it.uniroma1</groupId>
             <artifactId>commons</artifactId>
             <version>0.0.1-SNAPSHOT</version>
-<!--            <scope>compile</scope>-->
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>

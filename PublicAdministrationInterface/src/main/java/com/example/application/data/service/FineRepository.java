@@ -15,8 +15,6 @@ public class FineRepository {
     private static HashSet<Fine> fines=new HashSet<>();
 
     public FineRepository(){
-
-
     }
     public static void InitializeRepository(){
         //fines =  new HashSet<>();

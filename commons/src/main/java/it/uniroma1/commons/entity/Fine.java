@@ -29,7 +29,7 @@ public class Fine {
     private User user;
 
     @ManyToOne
-    @JoinColumn(name = "code_receiver", referencedColumnName ="code")
+    @JoinColumn(name = "code_receiver", referencedColumnName ="fiscalCode")
     private Person receiver;
 
     @ManyToOne
@@ -44,9 +44,6 @@ public class Fine {
 
     @Column(name = "amount")
     private int amount;
-
-    @Column(name = "car_plate")
-    private String carPlate;
 
     @Column(name = "date")
     private Date date;

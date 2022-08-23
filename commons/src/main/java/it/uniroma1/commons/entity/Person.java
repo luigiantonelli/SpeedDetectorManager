@@ -30,4 +30,6 @@ public class Person {
     @Column(name = "address")
     private String address;
 
+    @OneToOne(mappedBy = "owner")
+    private Car car;
 }

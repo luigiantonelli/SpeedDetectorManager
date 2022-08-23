@@ -29,7 +29,7 @@ public class DetectionHandler {
         Optional<SpeedCamera> optionalSpeedCamera = speedCameraRepository.findById(detection.getSpeedCameraId());
         if(optionalSpeedCamera.isEmpty()) throw new SSLException("SpeedCamera is not present");
 
-        fine.setSpeedCamera(optionalSpeedCamera.get());
+//        fine.setSpeedCamera(optionalSpeedCamera.get());
         fine.setCarPlate(detection.getLicensePlate());
         //finire con la gestione della multa
 
