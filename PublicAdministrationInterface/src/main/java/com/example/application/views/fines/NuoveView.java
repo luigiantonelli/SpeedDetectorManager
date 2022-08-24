@@ -14,9 +14,12 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.value.ValueChangeMode;
 import com.vaadin.flow.server.VaadinSession;
 import it.uniroma1.commons.entity.Fine;
+import it.uniroma1.commons.entity.User;
 import it.uniroma1.commons.repository.FineRepository;
 import it.uniroma1.commons.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.Optional;
 
 //@Route(value = "multe/gestite", layout = FinesView.class)
 public class NuoveView extends VerticalLayout {
@@ -54,6 +57,11 @@ public class NuoveView extends VerticalLayout {
         filterText.setPlaceholder("Filtra per autovelox...");
         filterText.setClearButtonVisible(true);
         filterText.setValueChangeMode(ValueChangeMode.LAZY);
+        /*
+        usare per il filter
+        Optional<User> optionalUser = userRepository.findById(username);
+        User user = optionalUser.isPresent()?optionalUser.get():null;
+         */
 
 
         Button updateButton = new Button("Aggiorna", event -> {

@@ -32,7 +32,7 @@ public class FinesView extends AppLayout {
         if(user == null)
             regione = "UTENTE NULL";
         else
-            regione = user.getRegione();
+            regione = user.getRegion();
         H1 logo = new H1("Gestione multe della regione " + regione);
         logo.addClassNames("text-l", "m-m");
 
