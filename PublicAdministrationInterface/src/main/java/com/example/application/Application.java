@@ -8,6 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.FilterType;
 
 /**
  * The entry point of the Spring Boot application.
@@ -17,8 +18,9 @@ import org.springframework.context.annotation.ComponentScan;
  *
  */
 @SpringBootApplication
-@ComponentScan({"it.uniroma1.commons","com.example.application"})
-@Theme(value = "PAI")
+@ComponentScan(value = {"it.uniroma1.commons","com.example.application"},
+        excludeFilters = @ComponentScan.Filter(type = FilterType.ASPECTJ, pattern = "it.uniroma1.commons.queue.*"))
+@Theme(value = "MyTodo")
 @PWA(name = "My Todo", shortName = "My Todo", offlineResources = {"images/logo.png"})
 @NpmPackage(value = "line-awesome", version = "1.3.0")
 public class Application extends SpringBootServletInitializer implements AppShellConfigurator {
