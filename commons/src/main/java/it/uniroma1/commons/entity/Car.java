@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -31,7 +32,7 @@ public class Car {
     private Date registrationDate;
 
     @OneToMany(mappedBy = "car")
-    private List<Fine> fines;
+    private List<Fine> fines = new ArrayList<>();
 
     @Column(name = "road_type")
     private String roadType;

@@ -22,10 +22,6 @@ public class Detection {
 
     private String licensePlate;
 
-//    private CarType carType;
-
-//    private FuelType fuelType;
-
     private String region;
 
     private RoadType roadType;

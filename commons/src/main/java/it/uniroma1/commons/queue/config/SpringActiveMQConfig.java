@@ -26,9 +26,9 @@ public class SpringActiveMQConfig {
 	}
 
 	@Bean
-	@Qualifier("admin_queue")
-	public Queue queueAdmin() {
-		return new ActiveMQQueue(ParamConnection.ADMIN_DETECTION_QUEUE);
+	@Qualifier("statistic_queue")
+	public Queue queueStatistic() {
+		return new ActiveMQQueue(ParamConnection.STATISTIC_QUEUE);
 	}
 
 	@Bean

@@ -8,6 +8,7 @@ import lombok.Setter;
 import org.apache.commons.codec.digest.DigestUtils;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @NoArgsConstructor
@@ -21,7 +22,7 @@ public class User {
     private String username;
 
     @OneToMany(mappedBy = "user")
-    private List<Fine> fines;
+    private List<Fine> fines = new ArrayList<>();
 
     @Column(name = "region")
     private String region;
@@ -48,7 +49,7 @@ public class User {
     private String surname;
 
     @OneToMany(mappedBy = "creator")
-    private List<User> users;
+    private List<User> users = new ArrayList<>();
 
     @ManyToOne
     @JoinColumn(name="creator_id",referencedColumnName = "username")

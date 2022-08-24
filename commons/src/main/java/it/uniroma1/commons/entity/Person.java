@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @NoArgsConstructor
@@ -19,7 +20,7 @@ public class Person {
     private String fiscalCode;
 
     @OneToMany(mappedBy = "receiver")
-    private List<Fine> fines;
+    private List<Fine> fines = new ArrayList<>();
 
     @Column(name = "name")
     private String name;

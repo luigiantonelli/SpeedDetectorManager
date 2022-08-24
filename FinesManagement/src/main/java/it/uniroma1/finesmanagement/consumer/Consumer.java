@@ -1,6 +1,5 @@
 package it.uniroma1.finesmanagement.consumer;
 
-import it.uniroma1.commons.queue.handler.DetectionHandler;
 import it.uniroma1.commons.queue.handler.MessageHandler;
 import it.uniroma1.commons.queue.object.Detection;
 import org.apache.activemq.ActiveMQConnectionFactory;

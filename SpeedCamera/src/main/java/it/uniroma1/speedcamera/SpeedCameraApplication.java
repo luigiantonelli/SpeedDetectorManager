@@ -13,6 +13,7 @@ import java.util.Random;
 public class SpeedCameraApplication {
 	private static final String[] cities = new String[]{"Milan", "Rome", "Milan", "Naples", "Turin", "Palermo", "Genoa", "Bologna", "Florence"};
 
+	private final static RoadType roadType  = RoadType.getRandomRoadType();
 	public static void main(String[] args) throws JMSException {
 		long i = 0;
 		while(true) {
@@ -26,12 +27,12 @@ public class SpeedCameraApplication {
 
 			detection.setId(i);
 			detection.setSpeedCameraId(Long.parseLong(args[0]));
-			detection.setCity(generateRandomCity());
+//			detection.setCity(generateRandomCity());
 			detection.setSpeedValue(generateRandomSpeed());
 			detection.setLicensePlate(generateRandomLicensePlate());
-			detection.setCarType(CarType.getRandomCarType());
-			detection.setFuelType(FuelType.getRandomFuelType());
-			detection.setRoadType(RoadType.getRandomRoadType());
+//			detection.setCarType(CarType.getRandomCarType());
+//			detection.setFuelType(FuelType.getRandomFuelType());
+			detection.setRoadType(roadType);
 
 			Gson gson = new Gson();
 
@@ -51,13 +52,13 @@ public class SpeedCameraApplication {
 		int alpha1 = 'A' + (int)(Math.random() * ('Z' - 'A'));
 		int alpha2 = 'A' + (int)(Math.random() * ('Z' - 'A'));
 		int alpha3 = 'A' + (int)(Math.random() * ('Z' - 'A'));
+		int alpha4 = 'A' + (int)(Math.random() * ('Z' - 'A'));
 		int digit1 = (int)(Math.random() * 10);
 		int digit2 = (int)(Math.random() * 10);
 		int digit3 = (int)(Math.random() * 10);
-		int digit4 = (int)(Math.random() * 10);
 
 		return "" + (char)(alpha1) + ((char)(alpha2)) +
-				((char)(alpha3)) + digit1 + digit2 + digit3 + digit4;
+				digit1 + digit2 + digit3 + ((char)(alpha3)) + ((char)(alpha4));
 	}
 
 	private static String generateRandomCity() {
