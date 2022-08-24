@@ -1,6 +1,6 @@
 package com.example.application.views.fines;
 
-import com.example.application.data.entity.User;
+//import com.example.application.data.entity.User;
 import com.example.application.views.logout.LogoutView;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
@@ -11,6 +11,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.RouterLink;
 import com.vaadin.flow.server.VaadinSession;
+import it.uniroma1.commons.entity.User;
 
 //@Route(value = "multe")
 

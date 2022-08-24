@@ -62,4 +62,7 @@ public class User {
         return this.region == region;
     }
 
+    public String getRegione() {
+        return region;
+    }
 }
