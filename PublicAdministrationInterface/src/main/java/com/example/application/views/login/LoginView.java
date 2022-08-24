@@ -1,6 +1,6 @@
 package com.example.application.views.login;
 
-import com.example.application.data.entity.User;
+//import com.example.application.data.entity.User;
 import com.example.application.data.service.AuthService;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
@@ -15,6 +15,7 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.VaadinSession;
+import it.uniroma1.commons.entity.User;
 
 @Route("login")
 

@@ -1,7 +1,7 @@
 package com.example.application.views.main;
 
-import com.example.application.data.service.FineRepository;
-import com.example.application.data.service.UserRepository;
+//import com.example.application.data.service.FineRepository;
+//import com.example.application.data.service.UserRepository;
 import com.example.application.views.login.LoginView;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.applayout.AppLayout;
@@ -67,8 +67,8 @@ public class MainView extends AppLayout {
 
     private Component[] createMenuItems() {
         //UserRepository rep = new UserRepository();
-        UserRepository.InitializeRepository();
-        FineRepository.InitializeRepository();
+        //UserRepository.InitializeRepository();
+        //FineRepository.InitializeRepository();
         return new Tab[] {
                 new Tab(createRouterLink("login", VaadinIcon.HOME, LoginView.class))
         };
