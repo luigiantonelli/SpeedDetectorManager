@@ -3,6 +3,7 @@ package com.example.application.data.service;
 import com.example.application.views.admin.AdminView;
 import com.example.application.views.fines.FinesView;
 import com.example.application.views.fines.GestiteView;
+import com.example.application.views.fines.InfoFineView;
 import com.example.application.views.fines.NuoveView;
 import com.example.application.views.logout.LogoutView;
 import com.example.application.views.main.MainView;
@@ -12,7 +13,10 @@ import com.vaadin.flow.router.RouteConfiguration;
 import com.vaadin.flow.server.VaadinSession;
 import it.uniroma1.commons.entity.User;
 import it.uniroma1.commons.enums.Role;
+import it.uniroma1.commons.repository.FineRepository;
 import it.uniroma1.commons.repository.UserRepository;
+import org.apache.commons.codec.digest.DigestUtils;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,7 +28,6 @@ import java.util.Optional;
 public class AuthService {
     @Autowired
     private UserRepository userRepository;
-
     public record AuthorizedRoute(String route, String name, Class<? extends Component> view) {
 
     }
@@ -46,7 +49,11 @@ public class AuthService {
         //prendi utente dal database
         Optional<User> optionalUser = userRepository.findById(username);
         User user = optionalUser.isPresent()?optionalUser.get():null;
+        if(user!=null) System.out.println("utente admin presente");
+        if(user.checkPassword(password)) System.out.println("password corretta");
+        if(user.checkRegion(region)) System.out.println("regione corretta");
         if (user != null && user.checkPassword(password) && user.checkRegion(region)/*user.isActive()*/) {
+
             VaadinSession.getCurrent().setAttribute(User.class, user);  // FORSE DA TOGLIERE
             createRoutes(user.getRole());
             if(user.getRole().equals(Role.ADMIN)){
@@ -83,6 +90,7 @@ public class AuthService {
             //routes.add(new AuthorizedRoute("multe", "Multe", FinesView.class));
             routes.add(new AuthorizedRoute("multe/nuove", "MulteNuove", NuoveView.class));
             routes.add(new AuthorizedRoute("multe/gestite", "MulteGestite", GestiteView.class));
+            routes.add(new AuthorizedRoute("multe/info", "InformazioniMulta", InfoFineView.class));
 
         }
         else if (role.equals(Role.ADMIN)) {
@@ -96,8 +104,8 @@ public class AuthService {
         return routes;
     }
 
-   /* public void register(String email, String password) {
-        User user = userRepository.save(new User(email, password, Role.USER));
+   public void register(String username, String password, String region, Role role) {
+        /*User user = userRepository.save(new User(email, password, Role.USER));
         String text = "http://localhost:8080/activate?code=" + user.getActivationCode();
         SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom("noreply@example.com");
@@ -105,7 +113,32 @@ public class AuthService {
         message.setText(text);
         message.setTo(email);
         mailSender.send(message);
-    }*/
+
+         */
+       User newUser = new User();
+       boolean useLetters = true;
+       boolean useNumbers = false;
+       int length = 10;
+       String passwordSalt = RandomStringUtils.random(length, useLetters, useNumbers);
+
+       newUser.setUsername(username);
+       newUser.setName(username); //DA MODIFICARE
+       newUser.setSurname(username); //DA MODIFICARE
+       newUser.setPasswordSalt(passwordSalt);
+       newUser.setPasswordHash(DigestUtils.sha1Hex(password + passwordSalt));
+       newUser.setRegion(region);
+       //valutare se mettere campo per il ruolo
+
+       newUser.setRole(Role.USER);
+       newUser.setActive(false); // DA MODIFICARE
+       newUser.setActivationCode(username); //DA MODIFICARE
+
+       User creator = VaadinSession.getCurrent().getAttribute(User.class);
+       newUser.setCreator(creator);
+
+       //salvataggio dell'utente nel database
+       userRepository.save(newUser);
+    }
 
     /*public void activate(String activationCode) throws AuthException {
         //User user = userRepository.getByActivationCode(activationCode)

@@ -14,41 +14,48 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.value.ValueChangeMode;
 import com.vaadin.flow.server.VaadinSession;
 import it.uniroma1.commons.entity.Fine;
+import it.uniroma1.commons.entity.User;
 import it.uniroma1.commons.repository.FineRepository;
 import it.uniroma1.commons.repository.UserRepository;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+//import org.springframework.beans.factory.annotation.Autowired;
 
 //@Route(value = "multe/gestite", layout = FinesView.class)
+//@Service
 public class GestiteView extends VerticalLayout {
-    @Autowired
-    private FineRepository fineRepository;
+    // @Autowired
+    private final FineRepository fineRepository;
     Grid<Fine> grid = new Grid<>(Fine.class);
     TextField filterText = new TextField();
 
-    public GestiteView() {
+    public GestiteView(FineRepository fineRep) {
+        fineRepository=fineRep;
         addClassName("gestite-view");
         setSizeFull();
         configureGrid();
         add(getToolbar(), grid);
         //grid.setItems(fineRepository.getFines());
-        grid.setItems(fineRepository.findAll());
+        grid.setItems(fineRepository.findAllManagedFines(VaadinSession.getCurrent().getAttribute(User.class).getRegion()));
 
     }
 
     private void configureGrid() {
         grid.addClassNames("contact-grid");
         grid.setSizeFull();
-        //grid.setColumns("Codice_Multa");
+        grid.removeAllColumns();
+
         grid.addColumn(fine -> fine.getId()).setHeader("Codice");
-        grid.addColumn(fine -> fine.getSpeedCamera()).setHeader("Autovelox");
-        //grid.addColumn(fine -> fine.link_pdf).setHeader("PDF");
+        grid.addColumn(fine -> fine.getSpeedCameraId()).setHeader("Autovelox");
+        grid.addColumn(fine -> fine.getReceiverFiscalCode()).setHeader("Destinatario");
+        grid.addColumn(fine -> fine.getDate()).setHeader("Data");
 
-        //grid.addColumn(fine -> new Button("Invia")).setHeader("Invia Multa");
+        grid.addColumn(fine -> fine.getUser().getUsername()).setHeader("Responsabile");
 
-        //grid.addColumn(contact -> contact.getStatus().getName()).setHeader("Status");
-        //grid.addColumn(contact -> contact.getCompany().getName()).setHeader("Company");*/
         grid.getColumns().forEach(col -> col.setAutoWidth(true));
     }
+
 
     private HorizontalLayout getToolbar() {
         filterText.setPlaceholder("Filtra per autovelox...");
@@ -57,8 +64,19 @@ public class GestiteView extends VerticalLayout {
 
 
         Button updateButton = new Button("Aggiorna", event -> {
-            //grid.setItems(fineRepository.getFines().stream().toList());
-            grid.setItems(fineRepository.findAll());
+
+
+            String filter = filterText.getValue();
+            if(filter.equals(""))
+                grid.setItems(fineRepository.findAllManagedFines(VaadinSession.getCurrent().getAttribute(User.class).getRegion()));
+            else{
+                if(! StringUtils.isNumeric(filter) || Integer.parseInt(filter)<0)
+                    Notification.show("L'id di un autovelox è un intero");
+
+                else
+                    grid.setItems(fineRepository.findFilterAllManagedFines(VaadinSession.getCurrent().getAttribute(User.class).getRegion(), Integer.parseInt(filter)));
+
+            }
 
         });
         HorizontalLayout toolbar = new HorizontalLayout(filterText, updateButton);
