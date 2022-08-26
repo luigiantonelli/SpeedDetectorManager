@@ -48,4 +48,15 @@ public class Fine {
 
     @Column(name = "date")
     private LocalDateTime date;
+
+    public Long getSpeedCameraId(){
+        return speedCamera.getId();
+    }
+    public String getSpeedCameraRegion(){
+        return speedCamera.getRegion();
+    }
+
+    public String getReceiverFiscalCode() {
+        return receiver.getFiscalCode();
+    }
 }

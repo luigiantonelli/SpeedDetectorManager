@@ -20,7 +20,7 @@ import org.springframework.context.annotation.FilterType;
 @SpringBootApplication
 @ComponentScan(value = {"it.uniroma1.commons","com.example.application"},
         excludeFilters = @ComponentScan.Filter(type = FilterType.ASPECTJ, pattern = "it.uniroma1.commons.queue.*"))
-@Theme(value = "MyTodo")
+//@Theme(value = "MyTodo")
 @PWA(name = "My Todo", shortName = "My Todo", offlineResources = {"images/logo.png"})
 @NpmPackage(value = "line-awesome", version = "1.3.0")
 public class Application extends SpringBootServletInitializer implements AppShellConfigurator {
