@@ -18,23 +18,27 @@ import it.uniroma1.commons.entity.User;
 import it.uniroma1.commons.repository.FineRepository;
 import it.uniroma1.commons.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import java.util.Optional;
+import org.springframework.stereotype.Service;
+//import org.springframework.beans.factory.annotation.Autowired;
 
 //@Route(value = "multe/gestite", layout = FinesView.class)
+//@Service
 public class NuoveView extends VerticalLayout {
-    @Autowired
-    private FineRepository fineRepository;
+    // @Autowired
+    private final FineRepository fineRepository;
     Grid<Fine> grid = new Grid<>(Fine.class);
     TextField filterText = new TextField();
 
-    public NuoveView() {
-        addClassName("nuove-view");
+    public NuoveView(FineRepository fineRep) {
+        fineRepository=fineRep;
+        if(fineRepository== null)
+            System.out.println("NULLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL");
+        addClassName("gestite-view");
         setSizeFull();
         configureGrid();
         add(getToolbar(), grid);
         //grid.setItems(fineRepository.getFines());
-        grid.setItems(fineRepository.findAll());
+        grid.setItems(fineRepository.findAllNewFines(VaadinSession.getCurrent().getAttribute(User.class).getRegion()));
 
     }
 
@@ -57,16 +61,11 @@ public class NuoveView extends VerticalLayout {
         filterText.setPlaceholder("Filtra per autovelox...");
         filterText.setClearButtonVisible(true);
         filterText.setValueChangeMode(ValueChangeMode.LAZY);
-        /*
-        usare per il filter
-        Optional<User> optionalUser = userRepository.findById(username);
-        User user = optionalUser.isPresent()?optionalUser.get():null;
-         */
 
 
         Button updateButton = new Button("Aggiorna", event -> {
             //grid.setItems(fineRepository.getFines().stream().toList());
-            grid.setItems(fineRepository.findAll());
+            grid.setItems(fineRepository.findAllNewFines(VaadinSession.getCurrent().getAttribute(User.class).getRegion()));
 
         });
         HorizontalLayout toolbar = new HorizontalLayout(filterText, updateButton);

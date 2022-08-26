@@ -259,10 +259,10 @@
     "construct-style-sheets-polyfill": "$construct-style-sheets-polyfill",
     "date-fns": "$date-fns",
     "lit": "$lit",
-    "line-awesome": "$line-awesome",
     "chokidar": "$chokidar",
     "@vaadin/lit-renderer": "$@vaadin/lit-renderer",
-    "chance": "$chance"
+    "chance": "$chance",
+    "line-awesome": "$line-awesome"
   },
   "vaadin": {
     "dependencies": {

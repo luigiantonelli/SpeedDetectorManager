@@ -17,15 +17,21 @@ import it.uniroma1.commons.entity.Fine;
 import it.uniroma1.commons.repository.FineRepository;
 import it.uniroma1.commons.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+//import org.springframework.beans.factory.annotation.Autowired;
 
 //@Route(value = "multe/gestite", layout = FinesView.class)
+//@Service
 public class GestiteView extends VerticalLayout {
-    @Autowired
-    private FineRepository fineRepository;
+   // @Autowired
+    private final FineRepository fineRepository;
     Grid<Fine> grid = new Grid<>(Fine.class);
     TextField filterText = new TextField();
 
-    public GestiteView() {
+    public GestiteView(FineRepository fineRep) {
+        fineRepository=fineRep;
+        if(fineRepository== null)
+            System.out.println("NULLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL");
         addClassName("gestite-view");
         setSizeFull();
         configureGrid();
