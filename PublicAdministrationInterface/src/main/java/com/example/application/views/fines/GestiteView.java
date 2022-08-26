@@ -56,6 +56,7 @@ public class GestiteView extends VerticalLayout {
         grid.getColumns().forEach(col -> col.setAutoWidth(true));
     }
 
+
     private HorizontalLayout getToolbar() {
         filterText.setPlaceholder("Filtra per autovelox...");
         filterText.setClearButtonVisible(true);

@@ -25,6 +25,13 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
+
 
 //import org.springframework.beans.factory.annotation.Autowired;
 
@@ -47,6 +54,33 @@ public class NuoveView extends VerticalLayout {
         //grid.setItems(fineRepository.findAllNewFines(VaadinSession.getCurrent().getAttribute(User.class).getRegion()));
         this.refreshGrid();
     }
+    public void getPage(){
+        try {
+            // get URL content
+
+            String a = "http://localhost:8080/multe/nuove";
+            URL url = new URL(a);
+            URLConnection conn = url.openConnection();
+
+            // open the stream and put it into BufferedReader
+            BufferedReader br = new BufferedReader(
+                    new InputStreamReader(conn.getInputStream()));
+
+            String inputLine;
+            while ((inputLine = br.readLine()) != null) {
+                System.out.println(inputLine);
+            }
+            br.close();
+
+            System.out.println("Done");
+
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     private void configureGrid() {
         grid.addClassNames("contact-grid");
@@ -75,6 +109,19 @@ public class NuoveView extends VerticalLayout {
                             );
                     button.addClickListener(e -> this.manageFine(fine));
                     button.setIcon(new Icon(VaadinIcon.CHECK));
+                })).setHeader("Conferma");
+
+        grid.addColumn(
+                new ComponentRenderer<>(Button::new, (button, fine) -> {
+                    button.addThemeVariants(ButtonVariant.LUMO_ICON,
+                            ButtonVariant.LUMO_TERTIARY
+                    );
+
+                    button.addClickListener(e ->{
+                        VaadinSession.getCurrent().setAttribute(Fine.class,fine);
+                        UI.getCurrent().getPage().setLocation("multe/info");
+                    } );
+                    button.setIcon(new Icon(VaadinIcon.INFO));
                 })).setHeader("Conferma");
 
         grid.getColumns().forEach(col -> col.setAutoWidth(true));
@@ -112,23 +159,9 @@ public class NuoveView extends VerticalLayout {
         filterText.setValueChangeMode(ValueChangeMode.LAZY);
 
 
-        Button updateButton = new Button("Aggiorna", event -> {
-            //grid.setItems(fineRepository.getFines().stream().toList());
-            refreshGrid();
-            /*String filter = filterText.getValue();
-            if(filter.equals(""))
-                grid.setItems(fineRepository.findAllNewFines(VaadinSession.getCurrent().getAttribute(User.class).getRegion()));
-            else{
-                if(! StringUtils.isNumeric(filter) || Integer.parseInt(filter)<0)
-                    Notification.show("L'id di un autovelox è un intero");
+        Button updateButton = new Button("Aggiorna", event -> refreshGrid());
 
-                else
-                    grid.setItems(fineRepository.findFilterAllNewFines(VaadinSession.getCurrent().getAttribute(User.class).getRegion(), Integer.parseInt(filter)));
-
-            }*/
-
-        });
-        HorizontalLayout toolbar = new HorizontalLayout(filterText, updateButton);
+        HorizontalLayout toolbar = new HorizontalLayout(filterText, updateButton/*, downloadButton*/);
         toolbar.addClassName("toolbar");
         return toolbar;
     }

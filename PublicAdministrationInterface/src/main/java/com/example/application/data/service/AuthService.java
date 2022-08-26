@@ -3,6 +3,7 @@ package com.example.application.data.service;
 import com.example.application.views.admin.AdminView;
 import com.example.application.views.fines.FinesView;
 import com.example.application.views.fines.GestiteView;
+import com.example.application.views.fines.InfoFineView;
 import com.example.application.views.fines.NuoveView;
 import com.example.application.views.logout.LogoutView;
 import com.example.application.views.main.MainView;
@@ -89,6 +90,7 @@ public class AuthService {
             //routes.add(new AuthorizedRoute("multe", "Multe", FinesView.class));
             routes.add(new AuthorizedRoute("multe/nuove", "MulteNuove", NuoveView.class));
             routes.add(new AuthorizedRoute("multe/gestite", "MulteGestite", GestiteView.class));
+            routes.add(new AuthorizedRoute("multe/info", "InformazioniMulta", InfoFineView.class));
 
         }
         else if (role.equals(Role.ADMIN)) {
