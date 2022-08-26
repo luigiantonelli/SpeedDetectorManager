@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="59f6767e-00c2-4df1-af5d-1055c2838036" name="Changes" comment="change PAI for Luca 2">
+    <list default="true" id="666e7452-307e-47d8-b8c9-b7796ecfceb8" name="Changes" comment="Repositories">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FinesManagement/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FinesManagement/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/PublicAdministrationInterface/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpeedCamera/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpeedCamera/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpeedDetectorAnalyzer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpeedDetectorAnalyzer/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +29,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
   </component>
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
@@ -72,7 +78,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;28911c54eda593509c0868141cd754fc&quot;
+    &quot;spring.configuration.checksum&quot;: &quot;6cf041513908b61523995f2661724ee1&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -96,9 +102,12 @@
   </component>
   <component name="RunManager" selected="Spring Boot.Application">
     <configuration name="SpeedCameraApplication" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="18" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="it.uniroma1.speedcamera.SpeedCameraApplication" />
-      <module name="SpeedCamera" />
-      <option name="PROGRAM_PARAMETERS" value="1" />
+      <module name="SpeedCameras" />
+      <option name="PROGRAM_PARAMETERS" value="0" />
+      <shortenClasspath name="ARGS_FILE" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="it.uniroma1.speedcamera.*" />
@@ -118,6 +127,12 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <shortenClasspath name="ARGS_FILE" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -179,7 +194,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="59f6767e-00c2-4df1-af5d-1055c2838036" name="Changes" comment="" />
+      <changelist id="666e7452-307e-47d8-b8c9-b7796ecfceb8" name="Changes" comment="Repositories" />
       <created>1661087166878</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -194,6 +209,9 @@
       <workItem from="1661197747950" duration="8838000" />
       <workItem from="1661276740148" duration="12977000" />
       <workItem from="1661341634823" duration="1594000" />
+      <workItem from="1661363939028" duration="2623000" />
+      <workItem from="1661433601622" duration="3073000" />
+      <workItem from="1661518697342" duration="13889000" />
     </task>
     <task id="LOCAL-00001" summary="merged and added DetectionExt">
       <created>1661090949223</created>

@@ -20,6 +20,7 @@
       <module name="FinesManagement" options="-parameters" />
       <module name="PublicAdministrationInterface" options="-parameters" />
       <module name="SpeedCamera" options="-parameters" />
+      <module name="SpeedCameras" options="-parameters" />
       <module name="SpeedDetectorAnalyzer" options="-parameters" />
       <module name="commons" options="-parameters" />
     </option>
