@@ -34,9 +34,6 @@ public class Car {
     @OneToMany(mappedBy = "car")
     private List<Fine> fines = new ArrayList<>();
 
-    @Column(name = "road_type")
-    private String roadType;
-
     @OneToOne
     @JoinColumn(name = "owner", referencedColumnName ="fiscalCode")
     private Person owner;

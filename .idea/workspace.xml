@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59f6767e-00c2-4df1-af5d-1055c2838036" name="Changes" comment="change PAI for Luca 2">
+      <change afterPath="$PROJECT_DIR$/SQL/script.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpeedCamera/src/main/java/it/uniroma1/speedcamera/SpeedCameraApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpeedCamera/src/main/java/it/uniroma1/speedcamera/SpeedCameraApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/src/main/java/it/uniroma1/commons/entity/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/src/main/java/it/uniroma1/commons/entity/Car.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,12 +74,20 @@
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;28911c54eda593509c0868141cd754fc&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;PostgreSQL&quot;
+    ]
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\lory2\Desktop\Lorenzo Uni\Laboratory of Advanced Programming\SpeedDetectorManager\FinesManagement\src\main\java\it\uniroma1\finesmanagement" />
       <recent name="C:\Users\lory2\Desktop\Lorenzo Uni\Laboratory of Advanced Programming\SpeedDetectorManager\PublicAdministrationInterface" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\lory2\Desktop\Lorenzo Uni\Laboratory of Advanced Programming\SpeedDetectorManager\SQL" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="it.uniroma1.speeddetectoranalyzer.consumer" />
@@ -94,7 +103,7 @@
       <command value="mvn  clean install -DskipTests" />
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.Application">
+  <component name="RunManager" selected="Spring Boot.FinesManagementApplication">
     <configuration name="SpeedCameraApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="it.uniroma1.speedcamera.SpeedCameraApplication" />
       <module name="SpeedCamera" />
@@ -102,19 +111,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="it.uniroma1.speedcamera.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SpeedDetectorAnalyzerConsumerApplication" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.uniroma1.speeddetectoranalyzer.SpeedDetectorAnalyzerConsumerApplication" />
-      <module name="SpeedDetectorAnalyzer" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="it.uniroma1.speeddetectoranalyzer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -194,6 +190,8 @@
       <workItem from="1661197747950" duration="8838000" />
       <workItem from="1661276740148" duration="12977000" />
       <workItem from="1661341634823" duration="1594000" />
+      <workItem from="1661371449062" duration="2539000" />
+      <workItem from="1661551003831" duration="1932000" />
     </task>
     <task id="LOCAL-00001" summary="merged and added DetectionExt">
       <created>1661090949223</created>
@@ -306,7 +304,7 @@
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/SpeedCamera/src/main/java/it/uniroma1/speedcamera/SpeedCameraApplication.java</url>
-          <line>28</line>
+          <line>26</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
