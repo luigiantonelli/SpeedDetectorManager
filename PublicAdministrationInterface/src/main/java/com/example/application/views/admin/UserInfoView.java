@@ -10,6 +10,7 @@ import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.grid.Grid;
+import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.notification.Notification;
@@ -46,13 +47,27 @@ import java.net.URLConnection;
 public class UserInfoView extends VerticalLayout {
     // @Autowired
     private final FineRepository fineRepository;
-    Grid<Fine> grid = new Grid<>(Fine.class);
-    TextField filterText = new TextField();
+    private Grid<Fine> grid = new Grid<>(Fine.class);
+    private TextField filterText = new TextField();
 
-    User analyzedUser = (User)VaadinSession.getCurrent().getAttribute("userAnalyzed");
-
+    private Span span; //utilizzato solo nel caso di utente non selezionato
+    private User analyzedUser = (User)VaadinSession.getCurrent().getAttribute("userAnalyzed");
+    private StringBuilder text;//utilizzato solo nel caso di utente non selezionato
     public UserInfoView(FineRepository fineRep) {
         fineRepository=fineRep;
+        span = new Span();
+        text = new StringBuilder();
+        if(analyzedUser==null) {
+            //questo è per gestire il caso in cui una persona dopo aver fatto l'accesso acceda a "utenti/info"
+            // senza scegliere un utente
+            //UI.getCurrent().getPage().setLocation(AuthService.usersRoute);
+            text.append( "<h3>Nessun utente selezionato, informazioni non disponibili.</h3>\n" );
+            span.getElement().setProperty("innerHTML",text.toString());
+            VerticalLayout output = new VerticalLayout(span);
+            add(output);
+            return;
+        }
+
 
         addClassName("userInfo-view");
         setSizeFull();

@@ -66,7 +66,7 @@ public class UsersView extends VerticalLayout {
         grid.removeAllColumns();
 
         grid.addColumn(user -> user.getUsername()).setHeader("Username");
-        grid.addColumn(user -> user.getName()+" "+user.getUsername()).setHeader("Impiegato");
+        grid.addColumn(user -> user.getName()+" "+user.getSurname()).setHeader("Impiegato");
         grid.addColumn(user -> user.getRegion()).setHeader("Regione");
 
         grid.addColumn(

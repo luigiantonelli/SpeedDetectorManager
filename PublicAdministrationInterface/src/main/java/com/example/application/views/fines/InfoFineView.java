@@ -35,13 +35,23 @@ public class InfoFineView extends Div {
     private Span span;
     private StringBuilder text;
     private Anchor download;
-    public InfoFineView(AuthService auth){
+    public InfoFineView(AuthService auth)  {
 
         span = new Span();
         text = new StringBuilder();
         download = new Anchor();
         User user = VaadinSession.getCurrent().getAttribute(User.class);
         Fine fine = VaadinSession.getCurrent().getAttribute(Fine.class);
+
+        if(fine==null) {
+            //questo è per gestire il caso in cui una persona dopo aver fatto l'accesso acceda a "multe/info" senza scegliere una multa
+            //UI.getCurrent().getPage().setLocation(AuthService.nuoveRoute);
+            text.append( "<h3>Nessuna multa selezionata, informazioni non disponibili.</h3>\n" );
+            span.getElement().setProperty("innerHTML",text.toString());
+            VerticalLayout output = new VerticalLayout(span);
+            add(output);
+            return;
+        }
         Car car = fine.getCar();
         Person p = fine.getReceiver();
         //MODIFICARE IL TEST IN BASE ALLE PROPRIE ESIGENZE

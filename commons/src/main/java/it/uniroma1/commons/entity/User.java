@@ -54,6 +54,7 @@ public class User {
     }
 
     public boolean checkRegion(String region) {
+
         return this.region.equals(region);
     }
 

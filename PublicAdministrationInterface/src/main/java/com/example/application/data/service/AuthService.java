@@ -59,6 +59,7 @@ public class AuthService {
         AdminLayoutRoutes.add(registrationRoute);
         AdminLayoutRoutes.add(usersRoute);
         AdminLayoutRoutes.add(userInfoFineRoute);
+        AdminLayoutRoutes.add(userInfoRoute);
         //AdminLayoutRoutes.add(userFinesRoute);
 
 
@@ -78,7 +79,7 @@ public class AuthService {
             VaadinSession.getCurrent().setAttribute(User.class, user);  // FORSE DA TOGLIERE
             createRoutes(user.getRole());
             if(user.getRole().equals(Role.ADMIN)){
-                UI.getCurrent().navigate(AuthService.registrationRoute);
+                UI.getCurrent().navigate(AuthService.usersRoute);
             }
             else{
                 UI.getCurrent().navigate(AuthService.nuoveRoute);
@@ -131,22 +132,22 @@ public class AuthService {
         if (role.equals(Role.USER)) {
             //routes.add(new AuthorizedRoute("login", "Login", LoginView.class));
             //routes.add(new AuthorizedRoute("multe", "Multe", FinesView.class));
-            routes.add(new AuthorizedRoute(nuoveRoute, "MulteNuove", NuoveView.class));
-            routes.add(new AuthorizedRoute(gestiteRoute, "MulteGestite", GestiteView.class));
-            routes.add(new AuthorizedRoute(infoFineRoute, "InformazioniMulta", InfoFineView.class));
+            routes.add(new AuthorizedRoute(nuoveRoute, "Multe Nuove", NuoveView.class));
+            routes.add(new AuthorizedRoute(gestiteRoute, "Multe Gestite", GestiteView.class));
+            routes.add(new AuthorizedRoute(infoFineRoute, "Informazioni Multa", InfoFineView.class));
 
         }
         else if (role.equals(Role.ADMIN)) {
 
-            routes.add(new AuthorizedRoute(registrationRoute, "Registration", RegistrationView.class));
+            routes.add(new AuthorizedRoute(registrationRoute, "Registrazione", RegistrationView.class));
             routes.add(new AuthorizedRoute(usersRoute, "Utenti", UsersView.class));
-            routes.add(new AuthorizedRoute(userInfoRoute,"Utenti", UserInfoView.class));
-            routes.add(new AuthorizedRoute(userInfoFineRoute,"Utenti", InfoFineView.class));
+            routes.add(new AuthorizedRoute(userInfoRoute,"Informazioni Utente", UserInfoView.class));
+            routes.add(new AuthorizedRoute(userInfoFineRoute,"Informazioni Multa", InfoFineView.class));
         }
         return routes;
     }
 
-   public void register(String username, String password, String region, Role role) {
+   public void register(String username, String name, String surname, String password, String region, Role role) {
 
        User newUser = new User();
        boolean useLetters = true;
@@ -155,12 +156,12 @@ public class AuthService {
        String passwordSalt = RandomStringUtils.random(length, useLetters, useNumbers);
 
        newUser.setUsername(username);
-       newUser.setName(username); //DA MODIFICARE
-       newUser.setSurname(username); //DA MODIFICARE
+       newUser.setName(name);
+       newUser.setSurname(surname);
        newUser.setPasswordSalt(passwordSalt);
        newUser.setPasswordHash(DigestUtils.sha1Hex(password + passwordSalt));
        newUser.setRegion(region);
-       //valutare se mettere campo per il ruolo
+
 
        newUser.setRole(Role.USER);
 //       newUser.setActive(false); // DA MODIFICARE
