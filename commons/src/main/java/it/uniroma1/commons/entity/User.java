@@ -36,12 +36,6 @@ public class User {
     @Column(name = "role")
     private Role role;
 
-    @Column(name = "activationCode")
-    private String activationCode;
-
-    @Column(name = "active")
-    private boolean active;
-
     @Column(name = "name")
     private String name;
 
