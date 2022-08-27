@@ -31,5 +31,10 @@
       <option name="name" value="Vaadin Directory" />
       <option name="url" value="https://maven.vaadin.com/vaadin-addons" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="typesafe" />
+      <option name="name" value="typesafe" />
+      <option name="url" value="https://mvnrepository.com/artifact/com.typesafe.play/play-test" />
+    </remote-repository>
   </component>
 </project>

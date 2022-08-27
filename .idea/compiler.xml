@@ -12,6 +12,7 @@
         <module name="PublicAdministrationInterface" />
         <module name="commons" />
         <module name="SpeedCamera" />
+        <module name="statistics" />
       </profile>
     </annotationProcessing>
   </component>
@@ -22,6 +23,7 @@
       <module name="SpeedCamera" options="-parameters" />
       <module name="SpeedDetectorAnalyzer" options="-parameters" />
       <module name="commons" options="-parameters" />
+      <module name="statistics" options="-parameters" />
     </option>
   </component>
 </project>
