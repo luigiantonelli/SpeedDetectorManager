@@ -1,8 +1,6 @@
 package it.uniroma1.speedcamera;
 
 import com.google.gson.Gson;
-import it.uniroma1.commons.queue.enums.CarType;
-import it.uniroma1.commons.queue.enums.FuelType;
 import it.uniroma1.commons.queue.enums.RoadType;
 import it.uniroma1.commons.queue.object.Detection;
 import it.uniroma1.commons.utility.ParamConnection;
@@ -11,7 +9,7 @@ import javax.jms.JMSException;
 import java.util.Random;
 
 public class SpeedCameraApplication {
-	private static final String[] cities = new String[]{"Milan", "Rome", "Milan", "Naples", "Turin", "Palermo", "Genoa", "Bologna", "Florence"};
+	private static final String[] plates = new String[]{"GB786KM", "FC679LM", "GK986KM"};
 
 	private final static RoadType roadType  = RoadType.getRandomRoadType();
 	public static void main(String[] args) throws JMSException {
@@ -27,11 +25,8 @@ public class SpeedCameraApplication {
 
 			detection.setId(i);
 			detection.setSpeedCameraId(Long.parseLong(args[0]));
-//			detection.setCity(generateRandomCity());
 			detection.setSpeedValue(generateRandomSpeed());
-			detection.setLicensePlate(generateRandomLicensePlate());
-//			detection.setCarType(CarType.getRandomCarType());
-//			detection.setFuelType(FuelType.getRandomFuelType());
+			detection.setLicensePlate(generateRandomPlate());
 			detection.setRoadType(roadType);
 
 			Gson gson = new Gson();
@@ -48,22 +43,22 @@ public class SpeedCameraApplication {
 		producter.sendMessage(message);
 	}
 
-	private static String generateRandomLicensePlate() {
-		int alpha1 = 'A' + (int)(Math.random() * ('Z' - 'A'));
-		int alpha2 = 'A' + (int)(Math.random() * ('Z' - 'A'));
-		int alpha3 = 'A' + (int)(Math.random() * ('Z' - 'A'));
-		int alpha4 = 'A' + (int)(Math.random() * ('Z' - 'A'));
-		int digit1 = (int)(Math.random() * 10);
-		int digit2 = (int)(Math.random() * 10);
-		int digit3 = (int)(Math.random() * 10);
+//	private static String generateRandomLicensePlate() {
+//		int alpha1 = 'A' + (int)(Math.random() * ('Z' - 'A'));
+//		int alpha2 = 'A' + (int)(Math.random() * ('Z' - 'A'));
+//		int alpha3 = 'A' + (int)(Math.random() * ('Z' - 'A'));
+//		int alpha4 = 'A' + (int)(Math.random() * ('Z' - 'A'));
+//		int digit1 = (int)(Math.random() * 10);
+//		int digit2 = (int)(Math.random() * 10);
+//		int digit3 = (int)(Math.random() * 10);
+//
+//		return "" + (char)(alpha1) + ((char)(alpha2)) +
+//				digit1 + digit2 + digit3 + ((char)(alpha3)) + ((char)(alpha4));
+//	}
 
-		return "" + (char)(alpha1) + ((char)(alpha2)) +
-				digit1 + digit2 + digit3 + ((char)(alpha3)) + ((char)(alpha4));
-	}
-
-	private static String generateRandomCity() {
+	private static String generateRandomPlate() {
 		Random rand = new Random();
-		return cities[rand.nextInt(cities.length)];
+		return plates[rand.nextInt(plates.length)];
 	}
 
 	private static int generateRandomSpeed() {
