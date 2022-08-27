@@ -1,6 +1,8 @@
 package com.example.application.data.service;
 
 import com.example.application.views.admin.AdminView;
+import com.example.application.views.admin.RegistrationView;
+import com.example.application.views.admin.UsersView;
 import com.example.application.views.fines.FinesView;
 import com.example.application.views.fines.GestiteView;
 import com.example.application.views.fines.InfoFineView;
@@ -20,6 +22,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,6 +30,9 @@ import java.util.Optional;
 public class AuthService {
     @Autowired
     private UserRepository userRepository;
+
+    private HashSet<String> FinesLayoutRoutes=new HashSet<>();
+    private HashSet<String> AdminLayoutRoutes=new HashSet<>();
     public record AuthorizedRoute(String route, String name, Class<? extends Component> view) {
 
     }
@@ -35,15 +41,22 @@ public class AuthService {
 
     }
 
-    //private final UserRepository userRepository;
-    // private final MailSender mailSender;
 
-    /*public AuthService(UserRepository userRepository, MailSender mailSender) {
-        this.userRepository = userRepository;
-        this.mailSender = mailSender;
-    }*/
 
     public void authenticate(String username, String password, String region) throws AuthException {
+        AdminLayoutRoutes.add("admin/registrazione");
+        AdminLayoutRoutes.add("admin/utenti");
+        AdminLayoutRoutes.add("admin/info");
+        AdminLayoutRoutes.add("admin/info/multa");
+
+
+        FinesLayoutRoutes.add("multe/info");
+        FinesLayoutRoutes.add("multe/nuove");
+        FinesLayoutRoutes.add("multe/gestite");
+
+
+
+
         //User user = userRepository.getByUsername(username);
         //prendi utente dal database
         Optional<User> optionalUser = userRepository.findById(username);
@@ -53,7 +66,7 @@ public class AuthService {
             VaadinSession.getCurrent().setAttribute(User.class, user);  // FORSE DA TOGLIERE
             createRoutes(user.getRole());
             if(user.getRole().equals(Role.ADMIN)){
-                UI.getCurrent().navigate("admin");
+                UI.getCurrent().navigate("admin/registrazione");
             }
             else{
                 UI.getCurrent().navigate("multe/nuove");
@@ -63,10 +76,14 @@ public class AuthService {
         }
     }
 
-    private void createRoutes(Role role) {
+    /*private void createRoutes(Role role) {
         getAuthorizedRoutes(role).stream()
                 .forEach(route ->{
-                        if( route.name.equals("Admin") || route.name.equals("Logout")){
+                        if(route.name.equals("Logout")){
+                            RouteConfiguration.forSessionScope().setRoute(
+                                    route.route, route.view, MainView.class);}
+
+                        else if(route.name.equals("admin/registrazione") || route.name.equals("admin/nuove")){
                         RouteConfiguration.forSessionScope().setRoute(
                                 route.route, route.view, MainView.class);}
                         else{
@@ -75,6 +92,24 @@ public class AuthService {
                         }
                         }
                         );
+
+    }*/
+    private void createRoutes(Role role) {
+        getAuthorizedRoutes(role).stream()
+                .forEach(route ->{
+                            if(AdminLayoutRoutes.contains(route.route)){
+                                RouteConfiguration.forSessionScope().setRoute(
+                                        route.route, route.view, AdminView.class);}
+
+                            else if(FinesLayoutRoutes.contains(route.route)){
+                                RouteConfiguration.forSessionScope().setRoute(
+                                        route.route, route.view, FinesView.class);}
+                            else{
+                                RouteConfiguration.forSessionScope().setRoute(
+                                        route.route, route.view, MainView.class);
+                            }
+                        }
+                );
 
     }
 
@@ -90,27 +125,15 @@ public class AuthService {
 
         }
         else if (role.equals(Role.ADMIN)) {
-            //routes.add(new AuthorizedRoute("login", "Login", LoginView.class));
-            //routes.add(new AuthorizedRoute("multe", "Multe", FinesView.class));
-            /*routes.add(new AuthorizedRoute("multe", "Multe", FinesView.class));
-            routes.add(new AuthorizedRoute("multe/nuove", "MulteNuove", NuoveView.class));
-            routes.add(new AuthorizedRoute("multe/gestite", "MulteGestite", GestiteView.class));*/
-            routes.add(new AuthorizedRoute("admin", "Admin", AdminView.class));
+
+            routes.add(new AuthorizedRoute("admin/registrazione", "Registration", RegistrationView.class));
+            routes.add(new AuthorizedRoute("admin/utenti", "Utenti", UsersView.class));
         }
         return routes;
     }
 
    public void register(String username, String password, String region, Role role) {
-        /*User user = userRepository.save(new User(email, password, Role.USER));
-        String text = "http://localhost:8080/activate?code=" + user.getActivationCode();
-        SimpleMailMessage message = new SimpleMailMessage();
-        message.setFrom("noreply@example.com");
-        message.setSubject("Confirmation email");
-        message.setText(text);
-        message.setTo(email);
-        mailSender.send(message);
 
-         */
        User newUser = new User();
        boolean useLetters = true;
        boolean useNumbers = false;
