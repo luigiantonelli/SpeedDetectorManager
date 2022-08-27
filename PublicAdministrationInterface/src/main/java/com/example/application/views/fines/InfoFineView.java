@@ -22,6 +22,7 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.StreamRegistration;
 import com.vaadin.flow.server.StreamResource;
 import com.vaadin.flow.server.VaadinSession;
+import it.uniroma1.commons.entity.Fine;
 import it.uniroma1.commons.entity.User;
 
 import java.io.*;
@@ -33,13 +34,14 @@ public class InfoFineView extends Div {
     private StringBuilder text;
     private Anchor download;
     public InfoFineView(AuthService auth){
-        //TextArea text = new TextArea();
-        //text.setPropertyDataSource(new TextFileProperty(new File("/a/d/r/e/s/s/file")));
+
         span = new Span();
         text = new StringBuilder();
         download = new Anchor();
 
         //MODIFICARE IL TEST IN BASE ALLE PROPRIE ESIGENZE
+        text.append( "<p>This set of panels asks you a couple dozen questions. From those questions AcmeCoach will build a complete document.</p>\n" );
+
         text.append( "<p>This set of panels asks you a couple dozen questions. From those questions AcmeCoach will build a complete document.</p>\n" );
         text.append( "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc volutpat commodo ipsum sit amet sollicitudin. Ut arcu leo, pulvinar vitae porta eu, porta sed nisi. Nulla facilisi. Aenean suscipit, nulla non vehicula aliquet, sem leo tristique erat, eget mattis arcu sem a purus. Donec at libero erat.</p>\n" );
         text.append( "<p>Morbi dolor turpis, faucibus ac pharetra quis, vulputate quis justo. Vivamus non pulvinar nisl. Mauris vitae libero et dui eleifend viverra sit amet sit amet tortor. Cras sollicitudin tincidunt dictum. Vivamus eros justo, laoreet sed commodo quis, ullamcorper nec libero.</p>\n" );
@@ -65,8 +67,13 @@ public class InfoFineView extends Div {
 
     }
     private void downloadPDF(String HTML) throws FileNotFoundException, IOException {
-        HtmlConverter.convertToPdf(HTML, new FileOutputStream("string-to-pdf.pdf"));
-        String resultFileName = "string-to-pdf.pdf";
+        String username = VaadinSession.getCurrent().getAttribute(User.class).getUsername();
+        String fineId = VaadinSession.getCurrent().getAttribute(Fine.class).getId().toString();
+
+        String resultFileName = "Multa_"+fineId+"-Utente_"+username+".pdf";
+        HtmlConverter.convertToPdf(HTML, new FileOutputStream(resultFileName));
+
+
         System.out.println( "PDF Created!" );
         File file = new File(resultFileName);
         final StreamResource resource = getStreamResource(resultFileName, file);

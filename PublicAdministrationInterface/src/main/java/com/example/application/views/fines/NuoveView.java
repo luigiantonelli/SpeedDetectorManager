@@ -122,7 +122,7 @@ public class NuoveView extends VerticalLayout {
                         UI.getCurrent().getPage().setLocation("multe/info");
                     } );
                     button.setIcon(new Icon(VaadinIcon.INFO));
-                })).setHeader("Conferma");
+                })).setHeader("Dettagli");
 
         grid.getColumns().forEach(col -> col.setAutoWidth(true));
     }
