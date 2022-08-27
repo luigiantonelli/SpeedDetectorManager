@@ -404,9 +404,6 @@
     "construct-style-sheets-polyfill": "$construct-style-sheets-polyfill",
     "lit": "$lit",
     "@polymer/polymer": "$@polymer/polymer",
-    "chokidar": "$chokidar",
-    "chance": "$chance",
-    "date-fns": "$date-fns",
-    "line-awesome": "$line-awesome"
+    "chokidar": "$chokidar"
   }
 }
