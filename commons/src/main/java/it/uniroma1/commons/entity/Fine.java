@@ -1,6 +1,5 @@
 package it.uniroma1.commons.entity;
 
-import com.vaadin.flow.router.RouterLink;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -8,7 +7,6 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -36,9 +34,6 @@ public class Fine {
     @ManyToOne
     @JoinColumn(name = "license_plate", referencedColumnName ="licensePlate")
     private Car car;
-
-    @Column(name = "pdf_link")
-    private RouterLink pdfLink;
 
     @Column(name = "points")
     private int points;
