@@ -46,39 +46,12 @@ public class NuoveView extends VerticalLayout {
     public NuoveView(FineRepository fineRep) {
         fineRepository=fineRep;
 
-        addClassName("gestite-view");
+        addClassName("nuove-view");
         setSizeFull();
         configureGrid();
         add(getToolbar(), grid);
-        //grid.setItems(fineRepository.getFines());
-        //grid.setItems(fineRepository.findAllNewFines(VaadinSession.getCurrent().getAttribute(User.class).getRegion()));
+
         this.refreshGrid();
-    }
-    public void getPage(){
-        try {
-            // get URL content
-
-            String a = "http://localhost:8080/multe/nuove";
-            URL url = new URL(a);
-            URLConnection conn = url.openConnection();
-
-            // open the stream and put it into BufferedReader
-            BufferedReader br = new BufferedReader(
-                    new InputStreamReader(conn.getInputStream()));
-
-            String inputLine;
-            while ((inputLine = br.readLine()) != null) {
-                System.out.println(inputLine);
-            }
-            br.close();
-
-            System.out.println("Done");
-
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
 
