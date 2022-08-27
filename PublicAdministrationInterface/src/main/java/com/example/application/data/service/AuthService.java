@@ -13,7 +13,6 @@ import com.vaadin.flow.router.RouteConfiguration;
 import com.vaadin.flow.server.VaadinSession;
 import it.uniroma1.commons.entity.User;
 import it.uniroma1.commons.enums.Role;
-import it.uniroma1.commons.repository.FineRepository;
 import it.uniroma1.commons.repository.UserRepository;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang3.RandomStringUtils;
@@ -127,15 +126,15 @@ public class AuthService {
        //valutare se mettere campo per il ruolo
 
        newUser.setRole(Role.USER);
-       newUser.setActive(false); // DA MODIFICARE
-       newUser.setActivationCode(username); //DA MODIFICARE
+//       newUser.setActive(false); // DA MODIFICARE
+//       newUser.setActivationCode(username); //DA MODIFICARE
 
        User creator = VaadinSession.getCurrent().getAttribute(User.class);
        newUser.setCreator(creator);
 
        //salvataggio dell'utente nel database
        userRepository.save(newUser);
-    }
+   }
 
     /*public void activate(String activationCode) throws AuthException {
         //User user = userRepository.getByActivationCode(activationCode)

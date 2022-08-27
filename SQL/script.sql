@@ -43,7 +43,6 @@ CREATE TABLE public.fines (
       id int8 NOT NULL,
       amount int4 NULL,
       "date" timestamp NULL,
-      pdf_link bytea NULL,
       points int4 NULL,
       license_plate varchar(255) NULL,
       code_receiver varchar(255) NULL,
@@ -81,4 +80,4 @@ INSERT INTO public.speed_cameras (id, region, road_type)
 VALUES (4, 'Piemonte', 1);
 -- USER --
 INSERT INTO public.users (username, "name", password_hash, password_salt, region, "role", surname, creator_id)
-VALUES ('admin', 'admin', 'dd94709528bb1c83d08f3088d4043f4742891f4f', 'admin', 'Lazio', 1, 'admin', '');
+VALUES ('admin', 'admin', 'dd94709528bb1c83d08f3088d4043f4742891f4f', 'admin', 'Lazio', 1, 'admin', 'admin');
