@@ -67,9 +67,6 @@ public class MainView extends AppLayout {
     }
 
     private Component[] createMenuItems() {
-        //UserRepository rep = new UserRepository();
-        //UserRepository.InitializeRepository();
-        //FineRepository.InitializeRepository();
         return new Tab[] {
                 new Tab(createRouterLink("login", VaadinIcon.HOME, LoginView.class))
         };

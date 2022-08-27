@@ -26,5 +26,13 @@ public interface FineRepository extends JpaRepository<Fine, Long> {
             nativeQuery = true)
     Collection<Fine> findFilterAllNewFines(String region,int camera_id);
 
+    @Query(
+            value = "SELECT * FROM fines f WHERE f.manager_code=?1",
+            nativeQuery = true)
+    Collection<Fine> findAllManagedFinesByManager(String username);
 
+    @Query(
+            value = "SELECT * FROM fines f WHERE f.manager_code=?2 AND f.speed_camera_id=?1",
+            nativeQuery = true)
+    Collection<Fine> findFilterAllManagedFinesByManager(int camera_id, String username);
 }

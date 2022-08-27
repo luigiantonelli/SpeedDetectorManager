@@ -2,6 +2,8 @@ package com.example.application.data.service;
 
 import com.example.application.views.admin.AdminView;
 import com.example.application.views.admin.RegistrationView;
+import com.example.application.views.admin.UserInfoView;
+
 import com.example.application.views.admin.UsersView;
 import com.example.application.views.fines.FinesView;
 import com.example.application.views.fines.GestiteView;
@@ -31,6 +33,16 @@ public class AuthService {
     @Autowired
     private UserRepository userRepository;
 
+    public static String registrationRoute = "admin/registrazione";
+    public static String usersRoute = "admin/utenti";
+    public static String userInfoRoute = "admin/utenti/info";
+    //public static String userFinesRoute = "admin/utenti/info/multa";
+    public static String userInfoFineRoute = "admin/utenti/info/multa";
+
+    public static String gestiteRoute = "multe/gestite";
+    public static String nuoveRoute = "multe/nuove";
+    public static String infoFineRoute = "multe/info";
+
     private HashSet<String> FinesLayoutRoutes=new HashSet<>();
     private HashSet<String> AdminLayoutRoutes=new HashSet<>();
     public record AuthorizedRoute(String route, String name, Class<? extends Component> view) {
@@ -44,15 +56,15 @@ public class AuthService {
 
 
     public void authenticate(String username, String password, String region) throws AuthException {
-        AdminLayoutRoutes.add("admin/registrazione");
-        AdminLayoutRoutes.add("admin/utenti");
-        AdminLayoutRoutes.add("admin/info");
-        AdminLayoutRoutes.add("admin/info/multa");
+        AdminLayoutRoutes.add(registrationRoute);
+        AdminLayoutRoutes.add(usersRoute);
+        AdminLayoutRoutes.add(userInfoFineRoute);
+        //AdminLayoutRoutes.add(userFinesRoute);
 
 
-        FinesLayoutRoutes.add("multe/info");
-        FinesLayoutRoutes.add("multe/nuove");
-        FinesLayoutRoutes.add("multe/gestite");
+        FinesLayoutRoutes.add(infoFineRoute);
+        FinesLayoutRoutes.add(nuoveRoute);
+        FinesLayoutRoutes.add(gestiteRoute);
 
 
 
@@ -66,10 +78,10 @@ public class AuthService {
             VaadinSession.getCurrent().setAttribute(User.class, user);  // FORSE DA TOGLIERE
             createRoutes(user.getRole());
             if(user.getRole().equals(Role.ADMIN)){
-                UI.getCurrent().navigate("admin/registrazione");
+                UI.getCurrent().navigate(AuthService.registrationRoute);
             }
             else{
-                UI.getCurrent().navigate("multe/nuove");
+                UI.getCurrent().navigate(AuthService.nuoveRoute);
             }
         } else {
             throw new AuthException();
@@ -119,15 +131,17 @@ public class AuthService {
         if (role.equals(Role.USER)) {
             //routes.add(new AuthorizedRoute("login", "Login", LoginView.class));
             //routes.add(new AuthorizedRoute("multe", "Multe", FinesView.class));
-            routes.add(new AuthorizedRoute("multe/nuove", "MulteNuove", NuoveView.class));
-            routes.add(new AuthorizedRoute("multe/gestite", "MulteGestite", GestiteView.class));
-            routes.add(new AuthorizedRoute("multe/info", "InformazioniMulta", InfoFineView.class));
+            routes.add(new AuthorizedRoute(nuoveRoute, "MulteNuove", NuoveView.class));
+            routes.add(new AuthorizedRoute(gestiteRoute, "MulteGestite", GestiteView.class));
+            routes.add(new AuthorizedRoute(infoFineRoute, "InformazioniMulta", InfoFineView.class));
 
         }
         else if (role.equals(Role.ADMIN)) {
 
-            routes.add(new AuthorizedRoute("admin/registrazione", "Registration", RegistrationView.class));
-            routes.add(new AuthorizedRoute("admin/utenti", "Utenti", UsersView.class));
+            routes.add(new AuthorizedRoute(registrationRoute, "Registration", RegistrationView.class));
+            routes.add(new AuthorizedRoute(usersRoute, "Utenti", UsersView.class));
+            routes.add(new AuthorizedRoute(userInfoRoute,"Utenti", UserInfoView.class));
+            routes.add(new AuthorizedRoute(userInfoFineRoute,"Utenti", InfoFineView.class));
         }
         return routes;
     }
