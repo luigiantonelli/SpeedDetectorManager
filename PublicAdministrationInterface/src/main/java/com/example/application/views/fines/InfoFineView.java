@@ -22,7 +22,9 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.StreamRegistration;
 import com.vaadin.flow.server.StreamResource;
 import com.vaadin.flow.server.VaadinSession;
+import it.uniroma1.commons.entity.Car;
 import it.uniroma1.commons.entity.Fine;
+import it.uniroma1.commons.entity.Person;
 import it.uniroma1.commons.entity.User;
 
 import java.io.*;
@@ -38,13 +40,21 @@ public class InfoFineView extends Div {
         span = new Span();
         text = new StringBuilder();
         download = new Anchor();
-
+        User user = VaadinSession.getCurrent().getAttribute(User.class);
+        Fine fine = VaadinSession.getCurrent().getAttribute(Fine.class);
+        Car car = fine.getCar();
+        Person p = fine.getReceiver();
         //MODIFICARE IL TEST IN BASE ALLE PROPRIE ESIGENZE
-        text.append( "<p>This set of panels asks you a couple dozen questions. From those questions AcmeCoach will build a complete document.</p>\n" );
+        text.append( "<h3>Pubblica amministrazione Italiana - Regione " + user.getRegion()  +"</h3>\n" );
 
-        text.append( "<p>This set of panels asks you a couple dozen questions. From those questions AcmeCoach will build a complete document.</p>\n" );
-        text.append( "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc volutpat commodo ipsum sit amet sollicitudin. Ut arcu leo, pulvinar vitae porta eu, porta sed nisi. Nulla facilisi. Aenean suscipit, nulla non vehicula aliquet, sem leo tristique erat, eget mattis arcu sem a purus. Donec at libero erat.</p>\n" );
-        text.append( "<p>Morbi dolor turpis, faucibus ac pharetra quis, vulputate quis justo. Vivamus non pulvinar nisl. Mauris vitae libero et dui eleifend viverra sit amet sit amet tortor. Cras sollicitudin tincidunt dictum. Vivamus eros justo, laoreet sed commodo quis, ullamcorper nec libero.</p>\n" );
+        text.append( "<p>Il veicolo targato " + car.getLicensePlate() + ", intestato a " + p.getName() + " " + p.getSurname() + ", ha ricevuto la seguente multa: </p>\n" );
+        text.append( "<p>Regione di competenza: " + fine.getSpeedCameraRegion() + " </p>\n" );
+        text.append( "<p>Identificatore dell'autovelox: " + fine.getSpeedCameraId() + " </p>\n\n\n" );
+        text.append( "<p>Ammontare della multa: " + fine.getAmount() + " </p>\n" );
+        text.append( "<p>Punti sottratti dalla patente: " + fine.getPoints() + " </p>\n\n\n" );
+        if(fine.getUser() != null)
+            text.append( "<p>Responsabile della sanzione: " + fine.getUser().getUsername() + " </p>\n" );
+
         //MODIFICARE IL TESTO IN BASE ALLE PROPRIE ESIGENZE
         span.getElement().setProperty("innerHTML",text.toString());
 
