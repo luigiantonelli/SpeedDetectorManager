@@ -127,9 +127,10 @@ public class AuthService {
        //valutare se mettere campo per il ruolo
 
        newUser.setRole(Role.USER);
+       /*
        newUser.setActive(false); // DA MODIFICARE
        newUser.setActivationCode(username); //DA MODIFICARE
-
+        */
        User creator = VaadinSession.getCurrent().getAttribute(User.class);
        newUser.setCreator(creator);
 

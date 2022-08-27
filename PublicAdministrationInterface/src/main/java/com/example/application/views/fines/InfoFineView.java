@@ -89,7 +89,9 @@ public class InfoFineView extends Div {
         File file = new File(resultFileName);
         final StreamResource resource = getStreamResource(resultFileName, file);
         final StreamRegistration registration = VaadinSession.getCurrent().getResourceRegistry().registerResource(resource);
-        UI.getCurrent().getPage().setLocation(registration.getResourceUri());
+        //UI.getCurrent().getPage().setLocation(registration.getResourceUri());
+        UI.getCurrent().getPage().open(registration.getResourceUri().toString());
+
     }
     public static StreamResource getStreamResource(String fileName, File file) {
         return new StreamResource(fileName, () -> {
