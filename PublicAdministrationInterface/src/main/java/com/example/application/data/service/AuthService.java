@@ -49,9 +49,6 @@ public class AuthService {
         //prendi utente dal database
         Optional<User> optionalUser = userRepository.findById(username);
         User user = optionalUser.isPresent()?optionalUser.get():null;
-        if(user!=null) System.out.println("utente admin presente");
-        if(user.checkPassword(password)) System.out.println("password corretta");
-        if(user.checkRegion(region)) System.out.println("regione corretta");
         if (user != null && user.checkPassword(password) && user.checkRegion(region)/*user.isActive()*/) {
 
             VaadinSession.getCurrent().setAttribute(User.class, user);  // FORSE DA TOGLIERE
