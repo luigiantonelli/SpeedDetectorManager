@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="666e7452-307e-47d8-b8c9-b7796ecfceb8" name="Changes" comment="Repositories">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinesManagement/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FinesManagement/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/PublicAdministrationInterface/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpeedCamera/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpeedCamera/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpeedDetectorAnalyzer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpeedDetectorAnalyzer/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="666e7452-307e-47d8-b8c9-b7796ecfceb8" name="Changes" comment="Pom for docker" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -211,7 +204,7 @@
       <workItem from="1661341634823" duration="1594000" />
       <workItem from="1661363939028" duration="2623000" />
       <workItem from="1661433601622" duration="3073000" />
-      <workItem from="1661518697342" duration="13889000" />
+      <workItem from="1661518697342" duration="14122000" />
     </task>
     <task id="LOCAL-00001" summary="merged and added DetectionExt">
       <created>1661090949223</created>
@@ -283,7 +276,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661342243286</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Pom for docker">
+      <created>1661534956458</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1661534956458</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -312,7 +312,8 @@
     <MESSAGE value="change PAI for Luca and GG" />
     <MESSAGE value="change PAI for Luca" />
     <MESSAGE value="change PAI for Luca 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="change PAI for Luca 2" />
+    <MESSAGE value="Pom for docker" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pom for docker" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
