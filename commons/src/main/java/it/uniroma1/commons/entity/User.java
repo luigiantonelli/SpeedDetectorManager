@@ -36,12 +36,6 @@ public class User {
     @Column(name = "role")
     private Role role;
 
-    @Column(name = "activationCode")
-    private String activationCode;
-
-    @Column(name = "active")
-    private boolean active;
-
     @Column(name = "name")
     private String name;
 
@@ -60,6 +54,7 @@ public class User {
     }
 
     public boolean checkRegion(String region) {
+
         return this.region.equals(region);
     }
 

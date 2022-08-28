@@ -1,4 +1,5 @@
-package com.example.application.views.fines;
+package com.example.application.views.admin;
+
 
 //import com.example.application.data.entity.Fine;
 //import com.example.application.data.entity.User;
@@ -9,6 +10,7 @@ import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.grid.Grid;
+import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.notification.Notification;
@@ -42,16 +44,32 @@ import java.net.URLConnection;
 
 
 
-public class GestiteView extends VerticalLayout {
+public class UserInfoView extends VerticalLayout {
     // @Autowired
     private final FineRepository fineRepository;
-    Grid<Fine> grid = new Grid<>(Fine.class);
-    TextField filterText = new TextField();
+    private Grid<Fine> grid = new Grid<>(Fine.class);
+    private TextField filterText = new TextField();
 
-    public GestiteView(FineRepository fineRep) {
+    private Span span; //utilizzato solo nel caso di utente non selezionato
+    private User analyzedUser = (User)VaadinSession.getCurrent().getAttribute("userAnalyzed");
+    private StringBuilder text;//utilizzato solo nel caso di utente non selezionato
+    public UserInfoView(FineRepository fineRep) {
         fineRepository=fineRep;
+        span = new Span();
+        text = new StringBuilder();
+        if(analyzedUser==null) {
+            //questo è per gestire il caso in cui una persona dopo aver fatto l'accesso acceda a "utenti/info"
+            // senza scegliere un utente
+            //UI.getCurrent().getPage().setLocation(AuthService.usersRoute);
+            text.append( "<h3>Nessun utente selezionato, informazioni non disponibili.</h3>\n" );
+            span.getElement().setProperty("innerHTML",text.toString());
+            VerticalLayout output = new VerticalLayout(span);
+            add(output);
+            return;
+        }
 
-        addClassName("nuove-view");
+
+        addClassName("userInfo-view");
         setSizeFull();
         configureGrid();
         add(getToolbar(), grid);
@@ -68,7 +86,9 @@ public class GestiteView extends VerticalLayout {
         grid.addColumn(fine -> fine.getId()).setHeader("Codice");
         grid.addColumn(fine -> fine.getSpeedCameraId()).setHeader("Autovelox");
         grid.addColumn(fine -> fine.getReceiverFiscalCode()).setHeader("Destinatario");
+        //grid.addColumn(fine -> fine.getDate()).setHeader("Data");
         grid.addColumn(fine -> fine.getStringDate()).setHeader("Data");
+
         grid.addColumn(fine -> fine.getUser().getUsername()).setHeader("Responsabile");
 
         grid.addColumn(
@@ -79,7 +99,7 @@ public class GestiteView extends VerticalLayout {
 
                     button.addClickListener(e ->{
                         VaadinSession.getCurrent().setAttribute(Fine.class,fine);
-                        UI.getCurrent().getPage().setLocation("multe/info");
+                        UI.getCurrent().getPage().setLocation(AuthService.userInfoFineRoute);
                     } );
                     button.setIcon(new Icon(VaadinIcon.INFO));
                 })).setHeader("Dettagli");
@@ -91,15 +111,16 @@ public class GestiteView extends VerticalLayout {
 
 
     public void refreshGrid(String filter){
+
         if(filter.equals(""))
-            grid.setItems(fineRepository.findAllManagedFines(VaadinSession.getCurrent().getAttribute(User.class).getRegion()));
+            grid.setItems(fineRepository.findAllManagedFinesByManager(analyzedUser.getUsername()));
         else{
             if(! StringUtils.isNumeric(filter) || Integer.parseInt(filter)<0)
                 Notification.show("L'id di un autovelox è un intero positivo");
 
             else
-                grid.setItems(fineRepository.findFilterAllManagedFines(VaadinSession.getCurrent().getAttribute(User.class).getRegion(), Integer.parseInt(filter)));
-
+                grid.setItems(fineRepository.findFilterAllManagedFinesByManager(Integer.parseInt(filter),analyzedUser.getUsername()));
+            //System.out.println(analyzedUser.getUsername());
         }
     }
     public void refreshGrid(){

@@ -25,6 +25,13 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
+
 
 //import org.springframework.beans.factory.annotation.Autowired;
 
@@ -39,14 +46,14 @@ public class NuoveView extends VerticalLayout {
     public NuoveView(FineRepository fineRep) {
         fineRepository=fineRep;
 
-        addClassName("gestite-view");
+        addClassName("nuove-view");
         setSizeFull();
         configureGrid();
         add(getToolbar(), grid);
-        //grid.setItems(fineRepository.getFines());
-        //grid.setItems(fineRepository.findAllNewFines(VaadinSession.getCurrent().getAttribute(User.class).getRegion()));
+
         this.refreshGrid();
     }
+
 
     private void configureGrid() {
         grid.addClassNames("contact-grid");
@@ -56,7 +63,8 @@ public class NuoveView extends VerticalLayout {
         grid.addColumn(fine -> fine.getId()).setHeader("Codice");
         grid.addColumn(fine -> fine.getSpeedCameraId()).setHeader("Autovelox");
         grid.addColumn(fine -> fine.getReceiverFiscalCode()).setHeader("Destinatario");
-        grid.addColumn(fine -> fine.getDate()).setHeader("Data");
+        //grid.addColumn(fine -> fine.getDate()).setHeader("Data");
+        grid.addColumn(fine -> fine.getStringDate()).setHeader("Data");
 
         grid.addColumn(
                 new ComponentRenderer<>(Button::new, (button, fine) -> {
@@ -76,6 +84,19 @@ public class NuoveView extends VerticalLayout {
                     button.addClickListener(e -> this.manageFine(fine));
                     button.setIcon(new Icon(VaadinIcon.CHECK));
                 })).setHeader("Conferma");
+
+        grid.addColumn(
+                new ComponentRenderer<>(Button::new, (button, fine) -> {
+                    button.addThemeVariants(ButtonVariant.LUMO_ICON,
+                            ButtonVariant.LUMO_TERTIARY
+                    );
+
+                    button.addClickListener(e ->{
+                        VaadinSession.getCurrent().setAttribute(Fine.class,fine);
+                        UI.getCurrent().getPage().setLocation("multe/info");
+                    } );
+                    button.setIcon(new Icon(VaadinIcon.INFO));
+                })).setHeader("Dettagli");
 
         grid.getColumns().forEach(col -> col.setAutoWidth(true));
     }
@@ -112,23 +133,9 @@ public class NuoveView extends VerticalLayout {
         filterText.setValueChangeMode(ValueChangeMode.LAZY);
 
 
-        Button updateButton = new Button("Aggiorna", event -> {
-            //grid.setItems(fineRepository.getFines().stream().toList());
-            refreshGrid();
-            /*String filter = filterText.getValue();
-            if(filter.equals(""))
-                grid.setItems(fineRepository.findAllNewFines(VaadinSession.getCurrent().getAttribute(User.class).getRegion()));
-            else{
-                if(! StringUtils.isNumeric(filter) || Integer.parseInt(filter)<0)
-                    Notification.show("L'id di un autovelox è un intero");
+        Button updateButton = new Button("Aggiorna", event -> refreshGrid());
 
-                else
-                    grid.setItems(fineRepository.findFilterAllNewFines(VaadinSession.getCurrent().getAttribute(User.class).getRegion(), Integer.parseInt(filter)));
-
-            }*/
-
-        });
-        HorizontalLayout toolbar = new HorizontalLayout(filterText, updateButton);
+        HorizontalLayout toolbar = new HorizontalLayout(filterText, updateButton/*, downloadButton*/);
         toolbar.addClassName("toolbar");
         return toolbar;
     }

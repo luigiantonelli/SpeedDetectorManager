@@ -1,4 +1,4 @@
-package com.example.application.views.fines;
+package com.example.application.views.admin;
 
 //import com.example.application.data.entity.Fine;
 //import com.example.application.data.entity.User;
@@ -42,14 +42,14 @@ import java.net.URLConnection;
 
 
 
-public class GestiteView extends VerticalLayout {
+public class UsersView extends VerticalLayout {
     // @Autowired
-    private final FineRepository fineRepository;
-    Grid<Fine> grid = new Grid<>(Fine.class);
+    private final UserRepository userRepository;
+    Grid<User> grid = new Grid<>(User.class);
     TextField filterText = new TextField();
 
-    public GestiteView(FineRepository fineRep) {
-        fineRepository=fineRep;
+    public UsersView(UserRepository userRep) {
+        userRepository=userRep;
 
         addClassName("nuove-view");
         setSizeFull();
@@ -65,24 +65,24 @@ public class GestiteView extends VerticalLayout {
         grid.setSizeFull();
         grid.removeAllColumns();
 
-        grid.addColumn(fine -> fine.getId()).setHeader("Codice");
-        grid.addColumn(fine -> fine.getSpeedCameraId()).setHeader("Autovelox");
-        grid.addColumn(fine -> fine.getReceiverFiscalCode()).setHeader("Destinatario");
-        grid.addColumn(fine -> fine.getStringDate()).setHeader("Data");
-        grid.addColumn(fine -> fine.getUser().getUsername()).setHeader("Responsabile");
+        grid.addColumn(user -> user.getUsername()).setHeader("Username");
+        grid.addColumn(user -> user.getName()+" "+user.getSurname()).setHeader("Impiegato");
+        grid.addColumn(user -> user.getRegion()).setHeader("Regione");
 
         grid.addColumn(
-                new ComponentRenderer<>(Button::new, (button, fine) -> {
+                new ComponentRenderer<>(Button::new, (button, user) -> {
                     button.addThemeVariants(ButtonVariant.LUMO_ICON,
                             ButtonVariant.LUMO_TERTIARY
                     );
 
                     button.addClickListener(e ->{
-                        VaadinSession.getCurrent().setAttribute(Fine.class,fine);
-                        UI.getCurrent().getPage().setLocation("multe/info");
+                        VaadinSession.getCurrent().setAttribute("userAnalyzed",user);
+                        UI.getCurrent().getPage().setLocation(AuthService.userInfoRoute);
                     } );
                     button.setIcon(new Icon(VaadinIcon.INFO));
                 })).setHeader("Dettagli");
+
+
 
         grid.getColumns().forEach(col -> col.setAutoWidth(true));
     }
@@ -92,21 +92,16 @@ public class GestiteView extends VerticalLayout {
 
     public void refreshGrid(String filter){
         if(filter.equals(""))
-            grid.setItems(fineRepository.findAllManagedFines(VaadinSession.getCurrent().getAttribute(User.class).getRegion()));
-        else{
-            if(! StringUtils.isNumeric(filter) || Integer.parseInt(filter)<0)
-                Notification.show("L'id di un autovelox è un intero positivo");
+            grid.setItems(userRepository.findAll());
 
-            else
-                grid.setItems(fineRepository.findFilterAllManagedFines(VaadinSession.getCurrent().getAttribute(User.class).getRegion(), Integer.parseInt(filter)));
-
-        }
+        else
+            grid.setItems(userRepository.findFilterAll(filter));
     }
     public void refreshGrid(){
         refreshGrid(filterText.getValue());
     }
     private HorizontalLayout getToolbar() {
-        filterText.setPlaceholder("Filtra per autovelox...");
+        filterText.setPlaceholder("Filtra per username...");
         filterText.setClearButtonVisible(true);
         filterText.setValueChangeMode(ValueChangeMode.LAZY);
 
