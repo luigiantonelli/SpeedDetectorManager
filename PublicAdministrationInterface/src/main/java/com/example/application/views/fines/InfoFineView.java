@@ -60,7 +60,7 @@ public class InfoFineView extends Div {
         text.append( "<p>Il veicolo targato " + car.getLicensePlate() + ", intestato a " + p.getName() + " " + p.getSurname() + ", ha ricevuto la seguente multa: </p>\n" );
         text.append( "<p>Regione di competenza: " + fine.getSpeedCameraRegion() + " </p>\n" );
         text.append( "<p>Identificatore dell'autovelox: " + fine.getSpeedCameraId() + " </p>\n\n\n" );
-        text.append( "<p>Data della sanzione: " + fine.getDate() + " </p>\n\n\n" );
+        text.append( "<p>Data della sanzione: " + fine.getStringDate() + " </p>\n\n\n" );
         text.append( "<p>Ammontare della multa: " + fine.getAmount() + " </p>\n" );
         text.append( "<p>Punti sottratti dalla patente: " + fine.getPoints() + " </p>\n\n\n" );
         if(fine.getUser() != null)

@@ -63,7 +63,8 @@ public class NuoveView extends VerticalLayout {
         grid.addColumn(fine -> fine.getId()).setHeader("Codice");
         grid.addColumn(fine -> fine.getSpeedCameraId()).setHeader("Autovelox");
         grid.addColumn(fine -> fine.getReceiverFiscalCode()).setHeader("Destinatario");
-        grid.addColumn(fine -> fine.getDate()).setHeader("Data");
+        //grid.addColumn(fine -> fine.getDate()).setHeader("Data");
+        grid.addColumn(fine -> fine.getStringDate()).setHeader("Data");
 
         grid.addColumn(
                 new ComponentRenderer<>(Button::new, (button, fine) -> {
