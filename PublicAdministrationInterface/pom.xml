@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>SpeedDetectorManager</artifactId>
         <groupId>it.uniroma1</groupId>
@@ -78,20 +78,20 @@
 
     <dependencies>
 
-            <!-- iText Core -->
-            <dependency>
-                <groupId>com.itextpdf</groupId>
-                <artifactId>itext7-core</artifactId>
-                <version>7.1.9</version>
-                <type>pom</type>
-            </dependency>
+        <!-- iText Core -->
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>itext7-core</artifactId>
+            <version>7.1.9</version>
+            <type>pom</type>
+        </dependency>
 
-            <!-- iText pdfHTML add-on -->
-            <dependency>
-                <groupId>com.itextpdf</groupId>
-                <artifactId>html2pdf</artifactId>
-                <version>2.1.6</version>
-            </dependency>
+        <!-- iText pdfHTML add-on -->
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>html2pdf</artifactId>
+            <version>2.1.6</version>
+        </dependency>
         <dependency>
             <groupId>com.vaadin</groupId>
             <!-- Replace artifactId with vaadin-core to use only free components -->
@@ -182,7 +182,6 @@
                 <configuration>
                     <wait>500</wait>
                     <maxAttempts>240</maxAttempts>
-                    <imageName>public-admin-interface</imageName>
                 </configuration>
             </plugin>
 

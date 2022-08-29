@@ -8,11 +8,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="FinesManagement" />
-        <module name="SpeedCameras" />
         <module name="SpeedDetectorAnalyzer" />
         <module name="PublicAdministrationInterface" />
-        <module name="commons" />
         <module name="SpeedCamera" />
+        <module name="SpeedCameras" />
+        <module name="commons" />
         <module name="statistics" />
       </profile>
     </annotationProcessing>
