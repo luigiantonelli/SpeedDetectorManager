@@ -1,6 +1,8 @@
 package scala
 
 import it.uniroma1.commons.queue.enums.{CarType, FuelType, RoadType}
+import scala.collection.immutable
+import scala.List
 
 object Utils {
   def mostActiveSpeedCamera(list: List[Detection]): Long = {
