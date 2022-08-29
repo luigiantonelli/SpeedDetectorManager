@@ -45,13 +45,14 @@ import java.net.URLConnection;
 
 
 public class UserInfoView extends VerticalLayout {
+    public static String userAnalyzed = "userAnalyzed";
     // @Autowired
     private final FineRepository fineRepository;
     private Grid<Fine> grid = new Grid<>(Fine.class);
     private TextField filterText = new TextField();
 
     private Span span; //utilizzato solo nel caso di utente non selezionato
-    private User analyzedUser = (User)VaadinSession.getCurrent().getAttribute("userAnalyzed");
+    private User analyzedUser = (User)VaadinSession.getCurrent().getAttribute(userAnalyzed);
     private StringBuilder text;//utilizzato solo nel caso di utente non selezionato
     public UserInfoView(FineRepository fineRep) {
         fineRepository=fineRep;

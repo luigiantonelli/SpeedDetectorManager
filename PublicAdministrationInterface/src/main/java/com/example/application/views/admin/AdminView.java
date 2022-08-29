@@ -2,6 +2,7 @@ package com.example.application.views.admin;
 
 //import com.example.application.data.entity.User;
 
+import com.example.application.views.home.HomeView;
 import com.example.application.views.logout.LogoutView;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
@@ -53,7 +54,8 @@ public class AdminView extends AppLayout {
     }
 
     private void createDrawer() {
-        addToDrawer(new VerticalLayout(new RouterLink("Registra Nuovi Utenti", RegistrationView.class), new RouterLink("Utenti", UsersView.class), new RouterLink("Logout", LogoutView.class)));
+        addToDrawer(new VerticalLayout(new RouterLink("Registra Nuovi Utenti", RegistrationView.class), new RouterLink("Utenti", UsersView.class), new RouterLink("Informazioni Account", HomeView.class),new RouterLink("Logout", LogoutView.class)
+        ));
     }
 }
 

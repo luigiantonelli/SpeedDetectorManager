@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59f6767e-00c2-4df1-af5d-1055c2838036" name="Changes" comment="change PAI for Luca 2">
-      <change beforePath="$PROJECT_DIR$/file.txt" beforeDir="false" afterPath="$PROJECT_DIR$/file.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics/src/main/java/scala/Hello.scala" beforeDir="false" afterPath="$PROJECT_DIR$/statistics/src/main/java/scala/Hello.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/data/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/data/service/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/admin/AdminView.java" beforeDir="false" afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/admin/AdminView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/admin/UserInfoView.java" beforeDir="false" afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/admin/UserInfoView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/home/HomeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/home/HomeView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +91,7 @@
       <command value="mvn  clean install -DskipTests" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.Hello">
+  <component name="RunManager" selected="Application.Application">
     <configuration name="Application" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.application.Application" />
       <module name="PublicAdministrationInterface" />
