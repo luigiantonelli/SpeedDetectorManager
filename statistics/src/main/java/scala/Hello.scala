@@ -3,6 +3,8 @@
 import io.circe.parser.decode
 
 import scala.io.Source
+import scala.collection.immutable
+import scala.List
 
 private object Hello {
   def main(args: Array[String]): Unit = {
