@@ -5,11 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59f6767e-00c2-4df1-af5d-1055c2838036" name="Changes" comment="change PAI for Luca 2">
+      <change afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/Paths.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/data/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/data/service/AuthService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/admin/AdminView.java" beforeDir="false" afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/admin/AdminView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/admin/UserInfoView.java" beforeDir="false" afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/admin/UserInfoView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/admin/UsersView.java" beforeDir="false" afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/admin/UsersView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/fines/FinesView.java" beforeDir="false" afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/fines/FinesView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/fines/InfoFineView.java" beforeDir="false" afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/fines/InfoFineView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/home/HomeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/home/HomeView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/login/ActivationView.java" beforeDir="false" afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/login/ActivationView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/login/LoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/login/LoginView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/logout/LogoutView.java" beforeDir="false" afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/logout/LogoutView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/main/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/main/MainView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +26,13 @@
   </component>
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Rebase.Settings">
     <option name="NEW_BASE" value="origin/master" />

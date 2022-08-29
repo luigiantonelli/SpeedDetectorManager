@@ -4,6 +4,7 @@ package com.example.application.views.home;
 
 //import com.example.application.data.entity.User;
 import com.example.application.data.service.AuthService;
+import com.example.application.views.Paths;
 import com.example.application.views.admin.UserInfoView;
 import com.itextpdf.html2pdf.HtmlConverter;
 import com.vaadin.flow.component.UI;
@@ -53,27 +54,35 @@ public class HomeView extends Div {
 
         span.getElement().setProperty("innerHTML",text.toString());
 
-        /*
+
         Button infoButton;
+        /*
         if(user.getRole()== Role.USER){
             infoButton = new Button("Multe gestite", event -> {
                 VaadinSession.getCurrent().setAttribute(UserInfoView.userAnalyzed, user);
-                UI.getCurrent().getPage().setLocation(AuthService.userFinesRoute);
+                UI.getCurrent().getPage().setLocation(Paths.userInfoFinesRoute);
             });
+            output = new VerticalLayout(
+                    span
+            );
         }
         else{
-            infoButton = new Button("Utenti creati", event -> {
+            /*in
+            foButton = new Button("Utenti creati", event -> {
                 //VaadinSession.getCurrent().setAttribute(UserInfoView.userAnalyzed, user);
                 UI.getCurrent().getPage().setLocation(AuthService.adminInfoUsersRoute);
             });
+             output = new VerticalLayout(
+                    span
+            );
         }
         */
-
-
 
         VerticalLayout output = new VerticalLayout(
                 span
         );
+
+
         add(output);
 
     }

@@ -52,7 +52,7 @@ public class FinesView extends AppLayout {
     }
 
     private void createDrawer() {
-        addToDrawer(new VerticalLayout(new RouterLink("Nuove", NuoveView.class), new RouterLink("Gestite", GestiteView.class),new RouterLink("Informazioni Account", HomeView.class), new RouterLink("Logout", LogoutView.class)));
+        addToDrawer(new VerticalLayout(new RouterLink("Nuove", NuoveView.class), new RouterLink("Gestite", GestiteView.class),new RouterLink("Account", HomeView.class), new RouterLink("Logout", LogoutView.class)));
     }
 }
 

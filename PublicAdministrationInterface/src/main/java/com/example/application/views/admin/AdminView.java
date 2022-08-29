@@ -54,7 +54,7 @@ public class AdminView extends AppLayout {
     }
 
     private void createDrawer() {
-        addToDrawer(new VerticalLayout(new RouterLink("Registra Nuovi Utenti", RegistrationView.class), new RouterLink("Utenti", UsersView.class), new RouterLink("Informazioni Account", HomeView.class),new RouterLink("Logout", LogoutView.class)
+        addToDrawer(new VerticalLayout(new RouterLink("Registra Nuovi Utenti", RegistrationView.class), new RouterLink("Utenti", UsersView.class), new RouterLink("Account", HomeView.class),new RouterLink("Logout", LogoutView.class)
         ));
     }
 }

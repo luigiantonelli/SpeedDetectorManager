@@ -3,10 +3,9 @@ package com.example.application.views.admin;
 
 //import com.example.application.data.entity.Fine;
 //import com.example.application.data.entity.User;
-import com.example.application.data.service.AuthService;
 //import com.example.application.data.service.FineRepository;
-import com.example.application.views.main.MainView;
-import com.vaadin.flow.component.UI;
+import com.example.application.views.Paths;
+        import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.grid.Grid;
@@ -19,22 +18,11 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.renderer.ComponentRenderer;
 import com.vaadin.flow.data.value.ValueChangeMode;
-import com.vaadin.flow.router.Route;
-import com.vaadin.flow.server.VaadinSession;
+        import com.vaadin.flow.server.VaadinSession;
 import it.uniroma1.commons.entity.Fine;
 import it.uniroma1.commons.entity.User;
 import it.uniroma1.commons.repository.FineRepository;
-import it.uniroma1.commons.repository.UserRepository;
-import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLConnection;
+        import org.apache.commons.lang3.StringUtils;
 
 
 //import org.springframework.beans.factory.annotation.Autowired;
@@ -61,7 +49,7 @@ public class UserInfoView extends VerticalLayout {
         if(analyzedUser==null) {
             //questo è per gestire il caso in cui una persona dopo aver fatto l'accesso acceda a "utenti/info"
             // senza scegliere un utente
-            //UI.getCurrent().getPage().setLocation(AuthService.usersRoute);
+            //UI.getCurrent().getPage().setLocation(AuthService.adminUsersRoute);
             text.append( "<h3>Nessun utente selezionato, informazioni non disponibili.</h3>\n" );
             span.getElement().setProperty("innerHTML",text.toString());
             VerticalLayout output = new VerticalLayout(span);
@@ -100,7 +88,7 @@ public class UserInfoView extends VerticalLayout {
 
                     button.addClickListener(e ->{
                         VaadinSession.getCurrent().setAttribute(Fine.class,fine);
-                        UI.getCurrent().getPage().setLocation(AuthService.userInfoFineRoute);
+                        UI.getCurrent().getPage().setLocation(Paths.adminUsersFineRoute);
                     } );
                     button.setIcon(new Icon(VaadinIcon.INFO));
                 })).setHeader("Dettagli");
