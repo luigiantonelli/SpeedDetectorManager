@@ -2,6 +2,7 @@ package it.uniroma1.speeddetectoranalyzer.consumer;
 
 import com.google.gson.Gson;
 import it.uniroma1.commons.entity.Car;
+import it.uniroma1.commons.entity.SpeedCamera;
 import it.uniroma1.commons.queue.enums.CarType;
 import it.uniroma1.commons.queue.enums.RoadType;
 import it.uniroma1.commons.queue.handler.MessageHandler;
@@ -52,6 +53,10 @@ public class ConsumerSpringSPA {
 			Gson gson = new Gson();
 			//gestione della rilevazione ed inoltra alla coda opportuna
 			Detection detection = (Detection) messageHandler.handleMessage(message, Detection.class);
+			SpeedCamera speedCamera = speedCameraRepository.findById(detection.getSpeedCameraId()).orElse(null);
+			if (speedCamera != null) {
+				detection.setRegion(speedCamera.getRegion());
+			}
 			if (detection.getRoadType() == RoadType.HIGHWAY && detection.getSpeedValue() > RoadType.HIGHWAY.getThreshold() ||
 					detection.getRoadType() == RoadType.THROUGHWAY && detection.getSpeedValue() > RoadType.THROUGHWAY.getThreshold() ||
 					detection.getRoadType() == RoadType.CITY_ROAD && detection.getSpeedValue() > RoadType.CITY_ROAD.getThreshold()) {
