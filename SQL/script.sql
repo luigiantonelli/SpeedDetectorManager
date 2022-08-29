@@ -59,7 +59,8 @@ CREATE TABLE public.fines (
 -- PERSON
 INSERT INTO public.person (fiscal_code, address, "name", surname) VALUES('MRYWLM80A01H501H', 'via lemanidalnaso', 'Mario', 'Rossi');
 INSERT INTO public.person (fiscal_code, address, "name", surname) VALUES('YTWRDG67T25H501R', 'via falsa', 'Franca', 'Bianchi');
-INSERT INTO public.person (fiscal_code, address, "name", surname) VALUES('JSGST56U812H501R', 'via dei gelsi', 'Piero', 'Pieri');
+INSERT INTO public.person (fiscal_code, address, "name", surname)
+VALUES ('JSGST56U812H501R', 'via dei gelsi', 'Piero', 'Pieri');
 INSERT INTO public.person (fiscal_code, address, "name", surname)
 VALUES ('UWGSB78H80H501H', 'via lemanidalnaso', 'Maria', 'Mastrangeli');
 -- CAR
@@ -69,6 +70,8 @@ INSERT INTO public.car (license_plate, car_type, fuel_type, registration_date, "
 VALUES ('FC679LM', 4, 5, now(), 'YTWRDG67T25H501R');
 INSERT INTO public.car (license_plate, car_type, fuel_type, registration_date, "owner")
 VALUES ('GK986KM', 6, 3, now(), 'JSGST56U812H501R');
+INSERT INTO public.car (license_plate, car_type, fuel_type, registration_date, "owner")
+VALUES ('BC129MM', 5, 4, now(), 'JSGST56U812H501R');
 -- SC
 INSERT INTO public.speed_cameras (id, region, road_type)
 VALUES (1, 'Lazio', 1);
