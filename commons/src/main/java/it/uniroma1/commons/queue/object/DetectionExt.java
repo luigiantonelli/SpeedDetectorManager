@@ -45,8 +45,9 @@ public class DetectionExt {
 
     @Override
     public String toString() {
+        String unknownType = "SCONOSCIUTO";
         return "[\"" + id.toString() + "\", \"" + speedCameraId.toString() + "\", \"" + speedValue + "\", \"" +
-                licensePlate + "\", \"" + carType.toString() + "\", \"" + fuelType.toString() + "\", \"" + region + "\", \"" +
+                licensePlate + "\", \"" + ((carType!=null)?carType.toString():unknownType)+ "\", \"" + ((fuelType!=null)?fuelType.toString():unknownType) + "\", \"" + region + "\", \"" +
                 roadType.toString() + "\", \"" + overcameLimit +
                 "\"]";
     }

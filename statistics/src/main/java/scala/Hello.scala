@@ -27,7 +27,7 @@ private object Hello {
 
     while (reader.hasNextLine) {
       rawJson = reader.nextLine()
-      println(rawJson);
+      //println(rawJson);
       val out = decode[List[String]](rawJson)
 
       println(out)
