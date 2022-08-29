@@ -62,7 +62,7 @@ public class Fine {
 
         return date.getDayOfMonth()+"/"+date.getMonthValue()+"/"+date.getYear()+" "+date.getHour()+":"+date.getMinute();*/
         //return date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy "));
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
         return date.format(formatter);
     }
 }

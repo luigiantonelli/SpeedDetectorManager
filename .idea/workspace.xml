@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="59f6767e-00c2-4df1-af5d-1055c2838036" name="Changes" comment="added admin queue">
+    <list default="true" id="59f6767e-00c2-4df1-af5d-1055c2838036" name="Changes" comment="change PAI for Luca 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics/src/main/java/scala/Utils.scala" beforeDir="false" afterPath="$PROJECT_DIR$/statistics/src/main/java/scala/Utils.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/src/main/java/it/uniroma1/commons/entity/Fine.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/src/main/java/it/uniroma1/commons/entity/Fine.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +15,13 @@
   </component>
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Rebase.Settings">
     <option name="NEW_BASE" value="origin/master" />
@@ -52,48 +59,93 @@
     <option name="version" value="2" />
   </component>
   <component name="ProjectId" id="2DfPRgMeGvmkBPfe8WNmeUum0dy" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/lory2/Desktop/Lorenzo Uni/Laboratory of Advanced Programming/SpeedDetectorManager/FinesManagement/src/main/java/it/uniroma1/finesmanagement",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "spring.configuration.checksum": "28911c54eda593509c0868141cd754fc"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/lory2/Desktop/Lorenzo Uni/Laboratory of Advanced Programming/SpeedDetectorManager/FinesManagement/src/main/java/it/uniroma1/finesmanagement&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;28911c54eda593509c0868141cd754fc&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\lory2\Desktop\Lorenzo Uni\Laboratory of Advanced Programming\SpeedDetectorManager\FinesManagement\src\main\java\it\uniroma1\finesmanagement" />
       <recent name="C:\Users\lory2\Desktop\Lorenzo Uni\Laboratory of Advanced Programming\SpeedDetectorManager\PublicAdministrationInterface" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="it.uniroma1.speeddetectoranalyzer.consumer" />
+      <recent name="it.uniroma1.speeddetectoranalyzer" />
+      <recent name="it.uniroma1.commons.repository" />
+      <recent name="it.uniroma1.commons.entity" />
       <recent name="it.uniroma1.commons.queue.object" />
     </key>
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
+      <command value="mvn clean" />
       <command value="mvn  clean install -DskipTests" />
     </option>
   </component>
   <component name="RunManager" selected="Application.Application">
-    <configuration name="Application" type="Application" factoryName="Application" nameIsGenerated="true">
+    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.application.Application" />
       <module name="PublicAdministrationInterface" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.example.application.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommonsApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.uniroma1.commons.CommonsApplication" />
+      <module name="commons" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="it.uniroma1.commons.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FinesManagementApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.uniroma1.finesmanagement.FinesManagementApplication" />
+      <module name="FinesManagement" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="it.uniroma1.finesmanagement.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FinesManagementConsumerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.uniroma1.finesmanagement.FinesManagementConsumerApplication" />
+      <module name="FinesManagement" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="it.uniroma1.finesmanagement.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -115,6 +167,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SpeedDetectorAnalyzerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.uniroma1.speeddetectoranalyzer.SpeedDetectorAnalyzerApplication" />
+      <module name="SpeedDetectorAnalyzer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="it.uniroma1.speeddetectoranalyzer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SpeedDetectorAnalyzerConsumerApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="it.uniroma1.speeddetectoranalyzer.SpeedDetectorAnalyzerConsumerApplication" />
       <module name="SpeedDetectorAnalyzer" />
@@ -128,12 +193,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="PublicAdministrationInterface" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.application.Application" />
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommonsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="ACTIVE_PROFILES" />
+      <module name="commons" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="it.uniroma1.commons.CommonsApplication" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.application.*" />
+          <option name="PATTERN" value="it.uniroma1.commons.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -155,6 +232,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SpeedDetectorAnalyzerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="SpeedDetectorAnalyzer" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="it.uniroma1.speeddetectoranalyzer.SpeedDetectorAnalyzerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Application" />
+        <item itemvalue="Application.FinesManagementApplication" />
+        <item itemvalue="Application.SpeedDetectorAnalyzerApplication" />
+        <item itemvalue="Application.FinesManagementConsumerApplication" />
+        <item itemvalue="Application.CommonsApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -170,7 +263,10 @@
       <workItem from="1661093080162" duration="1489000" />
       <workItem from="1661094605662" duration="216000" />
       <workItem from="1661114307175" duration="1699000" />
-      <workItem from="1661155135393" duration="2879000" />
+      <workItem from="1661155135393" duration="11711000" />
+      <workItem from="1661197747950" duration="8838000" />
+      <workItem from="1661276740148" duration="12977000" />
+      <workItem from="1661341634823" duration="1594000" />
     </task>
     <task id="LOCAL-00001" summary="merged and added DetectionExt">
       <created>1661090949223</created>
@@ -200,7 +296,49 @@
       <option name="project" value="LOCAL" />
       <updated>1661115995393</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="changed some stuff">
+      <created>1661158253332</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1661158253332</updated>
+    </task>
+    <task id="LOCAL-00006" summary="added car and more">
+      <created>1661176366001</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1661176366001</updated>
+    </task>
+    <task id="LOCAL-00007" summary="changed some entity">
+      <created>1661276853091</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1661276853091</updated>
+    </task>
+    <task id="LOCAL-00008" summary="change PAI for Luca and GG">
+      <created>1661278245147</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1661278245147</updated>
+    </task>
+    <task id="LOCAL-00009" summary="change PAI for Luca">
+      <created>1661341838410</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1661341838411</updated>
+    </task>
+    <task id="LOCAL-00010" summary="change PAI for Luca 2">
+      <created>1661342243286</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1661342243286</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,6 +361,62 @@
     <MESSAGE value="merged and added DetectionExt" />
     <MESSAGE value="merged PublicAdministration" />
     <MESSAGE value="added admin queue" />
-    <option name="LAST_COMMIT_MESSAGE" value="added admin queue" />
+    <MESSAGE value="changed some stuff" />
+    <MESSAGE value="added car and more" />
+    <MESSAGE value="changed some entity" />
+    <MESSAGE value="change PAI for Luca and GG" />
+    <MESSAGE value="change PAI for Luca" />
+    <MESSAGE value="change PAI for Luca 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="change PAI for Luca 2" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/FinesManagement/src/main/java/it/uniroma1/finesmanagement/consumer/ConsumerSpringFM.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/SpeedCamera/src/main/java/it/uniroma1/speedcamera/SpeedCameraApplication.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/FinesManagement/src/main/java/it/uniroma1/finesmanagement/consumer/ConsumerSpringFM.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/FinesManagement/src/main/java/it/uniroma1/finesmanagement/consumer/ConsumerSpringFM.java</url>
+          <line>66</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/FinesManagement/src/main/java/it/uniroma1/finesmanagement/consumer/ConsumerSpringFM.java</url>
+          <line>70</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/FinesManagement/src/main/java/it/uniroma1/finesmanagement/consumer/ConsumerSpringFM.java</url>
+          <line>74</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/FinesManagement/src/main/java/it/uniroma1/finesmanagement/consumer/ConsumerSpringFM.java</url>
+          <line>79</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/FinesManagement/src/main/java/it/uniroma1/finesmanagement/consumer/ConsumerSpringFM.java</url>
+          <line>81</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <breakpoint type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="15" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
