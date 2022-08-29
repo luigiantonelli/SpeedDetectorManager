@@ -2,13 +2,15 @@
 
 import io.circe.parser.decode
 
+import java.util.Scanner
 import scala.io.Source
 import scala.collection.immutable
 import scala.List
+import java.io.File
 
 private object Hello {
   def main(args: Array[String]): Unit = {
-    println("ciao")
+    //println("ciao")
     //val intsJson = List("luca", "2", "3").asJson
     //println(intsJson)
     //val out = intsJson.as[List[String]]
@@ -18,9 +20,13 @@ private object Hello {
     val filename = "file.txt";
     var rawJson = ""
     var l: List[Detection] = Nil
-    for (line <- Source.fromFile(filename).getLines) {
-      //rawJson = rawJson+line+"\n"
-      rawJson = line
+    val file = new File(filename)
+    val reader = new Scanner(file)
+    val TIME = 100
+    val SLEEPING_TIME = 20000
+
+    while (reader.hasNextLine) {
+      rawJson = reader.nextLine()
       println(rawJson);
       val out = decode[List[String]](rawJson)
 
@@ -32,32 +38,17 @@ private object Hello {
         }
       }
 
+      if(l.length >= TIME){
+        Support.executeQueries(l)
+        l = Nil
+      }
+
+      while(!reader.hasNextLine){
+        Thread.sleep(SLEEPING_TIME)
+      }
     }
-    println(Utils.mostActiveSpeedCamera(l))
-    println(Utils.highestSpeed(l))
-    println(Utils.busiestRegion(l))
-    println(Utils.ecoFriendlyPercentage(l))
-    println(Utils.mostCriminalRegion(l))
-    println(Utils.highestAverageSpeedCamera(l))
-    println(Utils.highestAverageRegion(l))
-    println(Utils.mostUsedFuel(l))
+
+
   }
-  /*val l = List(new Detection(1,1,120,"ABC",CarType.SUV,FuelType.HYBRID,"Lazio",RoadType.HIGHWAY, false),
-    new Detection(2,2,120,"ABC",CarType.SUV,FuelType.GASOLINE,"Lazio",RoadType.HIGHWAY, false),
-    new Detection(3,3,140,"ABC",CarType.SUV,FuelType.DIESEL,"Molise",RoadType.HIGHWAY, true),
-    new Detection(3,3,70,"ABC",CarType.SUV,FuelType.DIESEL,"Molise",RoadType.HIGHWAY, false),
-    new Detection(4,1,30,"ABC",CarType.SUV,FuelType.HYBRID,"Lazio",RoadType.HIGHWAY, false))*/
-
-
-  /*
-      val parseResult = parse(rawJson)
-      parseResult match {
-        case Right(decodedJson) =>
-          val jsonObject: Json = decodedJson.asJson
-
-
-          decode[Detection](jsonObject.spaces2)
-      }*/
-
 
 }
