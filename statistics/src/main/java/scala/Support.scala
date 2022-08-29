@@ -47,7 +47,7 @@ object Support {
     println("Percentuale di veicoli eco-friendly (elettrici o ibridi): " + Utils.ecoFriendlyPercentage(l) * 100 + "%")
     println("Regioni con più multe: " + Utils.mostCriminalRegion(l))
     val hasc = Utils.highestAverageSpeedCamera(l)
-    println("Autovelox con la media di velocità registrate più alta: " + hasc._1 + ", " + hasc._2 * 100 + "%")
+    println("Autovelox con la media di velocità registrate più alta: " + hasc._1 + ", " + hasc._2)
     val har = Utils.highestAverageRegion(l)
     println("Regione con la percentuale più alta di rilevazioni sopra il limite di velocità: " + har._1 + ", " + har._2 * 100 + "%")
     println("Alimentazione più diffusa: " + Utils.mostUsedFuel(l))

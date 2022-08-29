@@ -2,6 +2,7 @@ package com.example.application.views.login;
 
 //import com.example.application.data.entity.User;
 import com.example.application.data.service.AuthService;
+import com.example.application.views.Paths;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.combobox.ComboBox;
@@ -49,16 +50,9 @@ public class LoginView extends Div {
                             auth.authenticate(user.getValue().strip(), password.getValue().strip(), select.getValue());
                         }
                         else {
-                            //Notification.show("Sei già loggato, logout in corso...");
-                            UI.getCurrent().navigate("logout");
+                            UI.getCurrent().navigate(Paths.logoutRoute);
                         }
-                        //UI.getCurrent().getPage().setLocation("login");
-                        //usato per simulare logout
-                        //VaadinSession.getCurrent().getSession().invalidate();
-                        //VaadinSession.getCurrent().close();
 
-
-                        //UI.getCurrent().navigate("multe");//CONTROLLA RUOLO
                     } catch (AuthService.AuthException e) {
                         Notification.show("Credenziali errate.");
                     }})

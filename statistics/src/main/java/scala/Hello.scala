@@ -22,12 +22,12 @@ private object Hello {
     var l: List[Detection] = Nil
     val file = new File(filename)
     val reader = new Scanner(file)
-    val TIME = 100
+    val TIME = 50
     val SLEEPING_TIME = 20000
 
     while (reader.hasNextLine) {
       rawJson = reader.nextLine()
-      println(rawJson);
+      //println(rawJson);
       val out = decode[List[String]](rawJson)
 
       println(out)

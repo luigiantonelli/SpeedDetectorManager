@@ -45,7 +45,7 @@ public class InfoFineView extends Div {
 
         if(fine==null) {
             //questo è per gestire il caso in cui una persona dopo aver fatto l'accesso acceda a "multe/info" senza scegliere una multa
-            //UI.getCurrent().getPage().setLocation(AuthService.nuoveRoute);
+            //UI.getCurrent().getPage().setLocation(AuthService.newFinesRoute);
             text.append( "<h3>Nessuna multa selezionata, informazioni non disponibili.</h3>\n" );
             span.getElement().setProperty("innerHTML",text.toString());
             VerticalLayout output = new VerticalLayout(span);

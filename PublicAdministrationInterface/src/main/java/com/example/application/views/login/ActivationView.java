@@ -33,9 +33,7 @@ public class ActivationView extends Composite<Component> implements BeforeEnterO
                 new Text("Account activated."),
                 new RouterLink("Login", LoginView.class)
         );
-       /* } catch (AuthService.AuthException e) {
-            layout.add(new Text("Invalid link."));
-        }*/
+
     }
 
     @Override

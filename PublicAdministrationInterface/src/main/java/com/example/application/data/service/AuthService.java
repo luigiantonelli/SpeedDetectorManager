@@ -1,5 +1,6 @@
 package com.example.application.data.service;
 
+import com.example.application.views.Paths;
 import com.example.application.views.admin.AdminView;
 import com.example.application.views.admin.RegistrationView;
 import com.example.application.views.admin.UserInfoView;
@@ -9,6 +10,7 @@ import com.example.application.views.fines.FinesView;
 import com.example.application.views.fines.GestiteView;
 import com.example.application.views.fines.InfoFineView;
 import com.example.application.views.fines.NuoveView;
+import com.example.application.views.home.HomeView;
 import com.example.application.views.logout.LogoutView;
 import com.example.application.views.main.MainView;
 import com.vaadin.flow.component.Component;
@@ -33,17 +35,9 @@ public class AuthService {
     @Autowired
     private UserRepository userRepository;
 
-    public static String registrationRoute = "admin/registrazione";
-    public static String usersRoute = "admin/utenti";
-    public static String userInfoRoute = "admin/utenti/info";
-    //public static String userFinesRoute = "admin/utenti/info/multa";
-    public static String userInfoFineRoute = "admin/utenti/info/multa";
 
-    public static String gestiteRoute = "multe/gestite";
-    public static String nuoveRoute = "multe/nuove";
-    public static String infoFineRoute = "multe/info";
 
-    private HashSet<String> FinesLayoutRoutes=new HashSet<>();
+    private HashSet<String> UserLayoutRoutes=new HashSet<>();
     private HashSet<String> AdminLayoutRoutes=new HashSet<>();
     public record AuthorizedRoute(String route, String name, Class<? extends Component> view) {
 
@@ -56,17 +50,21 @@ public class AuthService {
 
 
     public void authenticate(String username, String password, String region) throws AuthException {
-        AdminLayoutRoutes.add(registrationRoute);
-        AdminLayoutRoutes.add(usersRoute);
-        AdminLayoutRoutes.add(userInfoFineRoute);
-        AdminLayoutRoutes.add(userInfoRoute);
-        //AdminLayoutRoutes.add(userFinesRoute);
+        AdminLayoutRoutes.add(Paths.registrationRoute);
+        AdminLayoutRoutes.add(Paths.adminUsersRoute);
+        AdminLayoutRoutes.add(Paths.adminUsersFineRoute);
+        AdminLayoutRoutes.add(Paths.adminUsersInfoRoute);
+        AdminLayoutRoutes.add(Paths.adminInfoRoute);
+        //AdminLayoutRoutes.add(adminInfoUsersRoute);
+
+        //AdminLayoutRoutes.add(userInfoFinesRoute);
 
 
-        FinesLayoutRoutes.add(infoFineRoute);
-        FinesLayoutRoutes.add(nuoveRoute);
-        FinesLayoutRoutes.add(gestiteRoute);
-
+        UserLayoutRoutes.add(Paths.infoFineRoute);
+        UserLayoutRoutes.add(Paths.newFinesRoute);
+        UserLayoutRoutes.add(Paths.managedFinesRoute);
+        UserLayoutRoutes.add(Paths.userInfoRoute);
+        UserLayoutRoutes.add(Paths.userInfoFinesRoute);
 
 
 
@@ -79,34 +77,17 @@ public class AuthService {
             VaadinSession.getCurrent().setAttribute(User.class, user);  // FORSE DA TOGLIERE
             createRoutes(user.getRole());
             if(user.getRole().equals(Role.ADMIN)){
-                UI.getCurrent().navigate(AuthService.usersRoute);
+                UI.getCurrent().navigate(Paths.adminUsersRoute);
             }
             else{
-                UI.getCurrent().navigate(AuthService.nuoveRoute);
+                UI.getCurrent().navigate(Paths.newFinesRoute);
             }
         } else {
             throw new AuthException();
         }
     }
 
-    /*private void createRoutes(Role role) {
-        getAuthorizedRoutes(role).stream()
-                .forEach(route ->{
-                        if(route.name.equals("Logout")){
-                            RouteConfiguration.forSessionScope().setRoute(
-                                    route.route, route.view, MainView.class);}
 
-                        else if(route.name.equals("admin/registrazione") || route.name.equals("admin/nuove")){
-                        RouteConfiguration.forSessionScope().setRoute(
-                                route.route, route.view, MainView.class);}
-                        else{
-                            RouteConfiguration.forSessionScope().setRoute(
-                                    route.route, route.view, FinesView.class);
-                        }
-                        }
-                        );
-
-    }*/
     private void createRoutes(Role role) {
         getAuthorizedRoutes(role).stream()
                 .forEach(route ->{
@@ -114,7 +95,7 @@ public class AuthService {
                                 RouteConfiguration.forSessionScope().setRoute(
                                         route.route, route.view, AdminView.class);}
 
-                            else if(FinesLayoutRoutes.contains(route.route)){
+                            else if(UserLayoutRoutes.contains(route.route)){
                                 RouteConfiguration.forSessionScope().setRoute(
                                         route.route, route.view, FinesView.class);}
                             else{
@@ -132,17 +113,25 @@ public class AuthService {
         if (role.equals(Role.USER)) {
             //routes.add(new AuthorizedRoute("login", "Login", LoginView.class));
             //routes.add(new AuthorizedRoute("multe", "Multe", FinesView.class));
-            routes.add(new AuthorizedRoute(nuoveRoute, "Multe Nuove", NuoveView.class));
-            routes.add(new AuthorizedRoute(gestiteRoute, "Multe Gestite", GestiteView.class));
-            routes.add(new AuthorizedRoute(infoFineRoute, "Informazioni Multa", InfoFineView.class));
+            routes.add(new AuthorizedRoute(Paths.newFinesRoute, "Multe Nuove", NuoveView.class));
+            routes.add(new AuthorizedRoute(Paths.managedFinesRoute, "Multe Gestite", GestiteView.class));
+            routes.add(new AuthorizedRoute(Paths.infoFineRoute, "Informazioni Multa", InfoFineView.class));
+            routes.add(new AuthorizedRoute(Paths.userInfoRoute, "Informazioni Utente", HomeView.class));
+            //routes.add(new AuthorizedRoute(Paths.userInfoFinesRoute, "Informazioni Multe", UserInfoView.class));
+
+
+
 
         }
         else if (role.equals(Role.ADMIN)) {
 
-            routes.add(new AuthorizedRoute(registrationRoute, "Registrazione", RegistrationView.class));
-            routes.add(new AuthorizedRoute(usersRoute, "Utenti", UsersView.class));
-            routes.add(new AuthorizedRoute(userInfoRoute,"Informazioni Utente", UserInfoView.class));
-            routes.add(new AuthorizedRoute(userInfoFineRoute,"Informazioni Multa", InfoFineView.class));
+            routes.add(new AuthorizedRoute(Paths.registrationRoute, "Registrazione", RegistrationView.class));
+            routes.add(new AuthorizedRoute(Paths.adminUsersRoute, "Utenti", UsersView.class));
+            routes.add(new AuthorizedRoute(Paths.adminUsersInfoRoute,"Informazioni Utente", UserInfoView.class));
+            routes.add(new AuthorizedRoute(Paths.adminUsersFineRoute,"Informazioni Multa", InfoFineView.class));
+            routes.add(new AuthorizedRoute(Paths.adminInfoRoute, "Informazioni Utente", HomeView.class));
+
+
         }
         return routes;
     }

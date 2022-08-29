@@ -2,6 +2,7 @@ package com.example.application.views.main;
 
 //import com.example.application.data.service.FineRepository;
 //import com.example.application.data.service.UserRepository;
+import com.example.application.views.Paths;
 import com.example.application.views.login.LoginView;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.applayout.AppLayout;
@@ -20,7 +21,7 @@ import com.vaadin.flow.router.RouterLink;
 import org.apache.commons.codec.digest.DigestUtils;
 
 import java.util.Optional;
-@Route("")
+@Route(Paths.rootRoute)
 
 
 @PageTitle("Pubblica amministrazione Repubblica Italiana")
