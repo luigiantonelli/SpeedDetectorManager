@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="666e7452-307e-47d8-b8c9-b7796ecfceb8" name="Changes" comment="Pom for docker">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/PublicAdministrationInterface/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/admin/AdminView.java" beforeDir="false" afterPath="$PROJECT_DIR$/PublicAdministrationInterface/src/main/java/com/example/application/views/admin/AdminView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/commons/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/commons/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -213,6 +211,8 @@
       <workItem from="1661691279218" duration="14234000" />
       <workItem from="1661763823386" duration="8471000" />
       <workItem from="1661792052845" duration="2389000" />
+      <workItem from="1661817094436" duration="1306000" />
+      <workItem from="1661858185925" duration="1500000" />
     </task>
     <task id="LOCAL-00001" summary="merged and added DetectionExt">
       <created>1661090949223</created>
@@ -305,7 +305,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661771103861</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Pom for docker">
+      <created>1661817258439</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1661817258441</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
