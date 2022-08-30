@@ -53,7 +53,7 @@ object Support {
     println("Alimentazione più diffusa: " + Utils.mostUsedFuel(l))
     println("Veicolo più diffuso: " + Utils.mostUsedCarType(l))
     val hacr = Utils.highestAverageCriminalRoad(l)
-    println("Tipo di strada con percentuale più alta di effrazioni: " + hacr._1 + ", " + hacr._2 * 100 + "%")
+    println("Tipo di strada con percentuale più alta di rilevazioni sopra il limite: " + hacr._1 + ", " + hacr._2 * 100 + "%")
   }
 
 }

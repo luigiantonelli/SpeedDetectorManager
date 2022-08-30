@@ -30,7 +30,13 @@ object Utils {
   }
 
   def mostCriminalRegion(list: List[Detection]): String = {
-    list.filter(_.overcameLimit).groupBy(_.region).maxBy(_._2.length)._1
+    val overlimit = list.filter(_.overcameLimit)
+    if(!overlimit.isEmpty) {
+      overlimit.groupBy(_.region).maxBy(_._2.length)._1
+    }
+    else{
+      "(Nessun veicolo ha superato il limite di velocità)"
+    }
   }
 
   def highestAverageRegion(list: List[Detection]): (String, Double) = { //regione con percentuale di rilevazioni sopra il limite di velocità più alto
@@ -41,7 +47,7 @@ object Utils {
     list.groupBy(_.carType).maxBy(_._2.length)._1
   }
 
-  def highestAverageCriminalRoad(list: List[Detection]): (RoadType, Double) = { //regione con percentuale di rilevazioni sopra il limite di velocità più alto
+  def highestAverageCriminalRoad(list: List[Detection]): (RoadType, Double) = { //tipo di strada con media di rilevazioni sopra il limite più alta
     list.groupBy(_.roadType).map(t => (t._1, t._2.filter(_.overcameLimit).length.toDouble / t._2.length.toDouble)).maxBy(_._2)
   }
 }
