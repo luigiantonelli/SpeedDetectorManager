@@ -84,3 +84,11 @@ VALUES (4, 'Piemonte', 1);
 -- USER --
 INSERT INTO public.users (username, "name", password_hash, password_salt, region, "role", surname, creator_id)
 VALUES ('admin', 'admin', 'dd94709528bb1c83d08f3088d4043f4742891f4f', 'admin', 'Lazio', 1, 'admin', 'admin');
+INSERT INTO public.users (username, name, password_hash, password_salt, region, "role", surname, creator_id)
+VALUES ('Franco', 'Franco', '44fa0bf601f4c872bc77617f6c18e7d4f063c922', 'PFnHloZXNO', 'Abruzzo', 0, 'Franchi', 'admin');
+INSERT INTO public.users (username, name, password_hash, password_salt, region, "role", surname, creator_id)
+VALUES ('Mario', 'Mario', 'cf89684878d8f6e62be23d2d0b8cbaafba4d58e9', 'MgWnlJcmML', 'Campania', 0, 'Mari', 'admin');
+INSERT INTO public.users (username, name, password_hash, password_salt, region, "role", surname, creator_id)
+VALUES ('Luca', 'Luca', '652bb929f84b92c5b6dcc36d723638f96d914b63', 'zizPEQAbPC', 'Lombardia', 0, 'Luchi', 'admin');
+
+
