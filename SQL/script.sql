@@ -1,5 +1,3 @@
--- SCHEMA --
-CREATE SCHEMA public AUTHORIZATION postgres;
 -- TABLES --
 CREATE TABLE public.person (
    fiscal_code varchar(255) NOT NULL,
@@ -39,7 +37,7 @@ CREATE TABLE public.users (
       CONSTRAINT fktgicgmqj2jc0o3m6y3lyuue7k FOREIGN KEY (creator_id) REFERENCES public.users(username)
 );
 
-CREATE TABLE public.fines (
+CREATE TABLE public.fines(
       id int8 NOT NULL,
       amount int4 NULL,
       "date" timestamp NULL,
@@ -57,12 +55,16 @@ CREATE TABLE public.fines (
 -- INSERT --
 
 -- PERSON
-INSERT INTO public.person (fiscal_code, address, "name", surname) VALUES('MRYWLM80A01H501H', 'via lemanidalnaso', 'Mario', 'Rossi');
-INSERT INTO public.person (fiscal_code, address, "name", surname) VALUES('YTWRDG67T25H501R', 'via falsa', 'Franca', 'Bianchi');
+INSERT INTO public.person (fiscal_code, address, "name", surname)
+VALUES ('MRYWLM80A01H501H', 'via lemanidalnaso', 'Mario', 'Rossi');
+INSERT INTO public.person (fiscal_code, address, "name", surname)
+VALUES ('YTWRDG67T25H501R', 'via falsa', 'Franca', 'Bianchi');
 INSERT INTO public.person (fiscal_code, address, "name", surname)
 VALUES ('JSGST56U812H501R', 'via dei gelsi', 'Piero', 'Pieri');
 INSERT INTO public.person (fiscal_code, address, "name", surname)
 VALUES ('UWGSB78H80H501H', 'via lemanidalnaso', 'Maria', 'Mastrangeli');
+INSERT INTO public.person (fiscal_code, address, "name", surname)
+VALUES ('YWHHA7272727KKK', 'via falsa', 'Nino', 'Diavolo');
 -- CAR
 INSERT INTO public.car (license_plate, car_type, fuel_type, registration_date, "owner")
 VALUES ('GB786KM', 0, 1, now(), 'MRYWLM80A01H501H');
@@ -71,7 +73,7 @@ VALUES ('FC679LM', 4, 5, now(), 'YTWRDG67T25H501R');
 INSERT INTO public.car (license_plate, car_type, fuel_type, registration_date, "owner")
 VALUES ('GK986KM', 6, 3, now(), 'JSGST56U812H501R');
 INSERT INTO public.car (license_plate, car_type, fuel_type, registration_date, "owner")
-VALUES ('BC129MM', 5, 4, now(), 'JSGST56U812H501R');
+VALUES ('BC129MM', 5, 4, now(), 'YWHHA7272727KKK');
 -- SC
 INSERT INTO public.speed_cameras (id, region, road_type)
 VALUES (1, 'Lazio', 1);

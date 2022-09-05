@@ -16,7 +16,7 @@
     <description>PublicAdministrationInterface</description>
 
     <properties>
-        <java.version>11</java.version>
+        <java.version>18</java.version>
         <vaadin.version>23.1.4</vaadin.version>
     </properties>
 
@@ -170,6 +170,7 @@
 
 
     </dependencies>
+
 
     <build>
         <defaultGoal>spring-boot:run</defaultGoal>

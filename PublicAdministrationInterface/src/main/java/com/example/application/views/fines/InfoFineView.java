@@ -57,8 +57,9 @@ public class InfoFineView extends Div {
         //MODIFICARE IL TEST IN BASE ALLE PROPRIE ESIGENZE
         text.append( "<h3>Pubblica amministrazione Italiana - Regione " + user.getRegion()  +"</h3>\n" );
 
-        text.append( "<p>Il veicolo targato " + car.getLicensePlate() + ", intestato a " + p.getName() + " " + p.getSurname() + ", ha ricevuto la seguente multa: </p>\n" );
-        text.append( "<p>Regione di competenza: " + fine.getSpeedCameraRegion() + " </p>\n" );
+        text.append("<p>Il veicolo targato " + car.getLicensePlate() + ", intestato a " + p.getName() + " " + p.getSurname() + ", ha ricevuto la seguente multa: </p>\n");
+        text.append("<p>Residenza intestatario del veicolo: " + p.getAddress() + " </p>\n\n\n");
+        text.append("<p>Regione di competenza: " + fine.getSpeedCameraRegion() + " </p>\n");
         text.append( "<p>Identificatore dell'autovelox: " + fine.getSpeedCameraId() + " </p>\n\n\n" );
         text.append( "<p>Data della sanzione: " + fine.getStringDate() + " </p>\n\n\n" );
         text.append( "<p>Ammontare della multa: " + fine.getAmount() + " </p>\n" );
