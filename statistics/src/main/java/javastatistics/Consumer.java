@@ -14,6 +14,7 @@ import org.apache.activemq.ActiveMQConnectionFactory;
 import javax.jms.*;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.LinkedList;
 
 
 /**
@@ -26,7 +27,7 @@ public class Consumer {
 
     private ActiveMQConnectionFactory connectionFactory;
 
-
+    private static final int NUMBER_OF_DETECTIONS = 25;
     public Consumer(String brokerUrl, String queue) {
         this.queue = queue;
         this.brokerUrl = brokerUrl;
@@ -51,8 +52,9 @@ public class Consumer {
             Destination destination = session.createQueue(queue);
             // Create a MessageConsumer from the Session to the Topic or Queue
             MessageConsumer consumer = session.createConsumer(destination);
-            String detections = "";
+            //String detections = "";
             int counter = 0;
+            LinkedList<DetectionExt> detections = new LinkedList<DetectionExt>();
             while (true) {
                 // Wait for a message
                 Message message = consumer.receive();
@@ -64,11 +66,12 @@ public class Consumer {
 
                     Gson gson = new Gson();
                     DetectionExt d = gson.fromJson(text, DetectionExt.class);
-                    detections += d.toString() + "\n";
+                    detections.add(d);
                     counter++;
-                    if(counter == 100){//DIMINUISCI PER FARE PROVE
-                        Support.executeQueries(detections);
-                        detections = "";
+                    if(counter == NUMBER_OF_DETECTIONS){
+                        //Support.executeQueries(detections);
+                        JavaSupport.executeQueries(detections);
+                        detections = new LinkedList<DetectionExt>();
                         counter = 0;
                     }
 
