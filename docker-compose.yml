@@ -1,0 +1,68 @@
+version: "3.9"
+services:
+  activemq:
+    image: rmohr/activemq
+    ports:
+      - 61616:61616
+      - 8161:8161
+    container_name: activemq
+
+  postgres:
+    image: postgres:14.5-alpine3.16
+    ports:
+      - 5432:5432
+    container_name: postgresql-container
+    environment:
+      - POSTGRES_PASSWORD=somePassword
+      - POSTGRES_DB=corporate
+    volumes:
+      - ./SpeedDetectorManager/SQL/script.sql:/docker-entrypoint-initdb.d/script.sql
+    depends_on:
+      - activemq
+
+  camera1:
+    build: ./SpeedDetectorManager/SpeedCamera
+    container_name: speed-camera1
+    network_mode: "host"
+    depends_on:
+      - postgres
+    command: "java -jar ./target/SpeedCamera-0.0.1-SNAPSHOT.jar 1"
+
+  camera2:
+    build: ./SpeedDetectorManager/SpeedCamera
+    container_name: speed-camera2
+    network_mode: "host"
+    depends_on:
+      - postgres
+    command: "java -jar ./target/SpeedCamera-0.0.1-SNAPSHOT.jar 2"
+
+  camera3:
+    build: ./SpeedDetectorManager/SpeedCamera
+    container_name: speed-camera3
+    network_mode: "host"
+    depends_on:
+      - postgres
+    command: "java -jar ./target/SpeedCamera-0.0.1-SNAPSHOT.jar 3"
+
+  analyzer:
+    image: speed-analyzer
+    container_name: analyzer
+    network_mode: "host"
+    depends_on:
+      - camera1
+      - camera2
+      - camera3
+
+  fines:
+    image: fines-management
+    container_name: fmanagement
+    network_mode: "host"
+    depends_on:
+      - analyzer
+
+  stat:
+    image: statistics:1.0-SNAPSHOT
+    container_name: stat
+    network_mode: "host"
+    depends_on:
+      - fines
