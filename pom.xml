@@ -22,7 +22,7 @@
     <module>PublicAdministrationInterface</module>
     <module>commons</module>
     <module>SpeedCamera</module>
-      <module>statistics</module>
+    <module>statistics</module>
   </modules>
 
   <properties>

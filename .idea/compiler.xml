@@ -10,8 +10,9 @@
         <module name="FinesManagement" />
         <module name="SpeedDetectorAnalyzer" />
         <module name="PublicAdministrationInterface" />
-        <module name="commons" />
         <module name="SpeedCamera" />
+        <module name="SpeedCameras" />
+        <module name="commons" />
         <module name="statistics" />
       </profile>
     </annotationProcessing>
@@ -21,6 +22,7 @@
       <module name="FinesManagement" options="-parameters" />
       <module name="PublicAdministrationInterface" options="-parameters" />
       <module name="SpeedCamera" options="-parameters" />
+      <module name="SpeedCameras" options="-parameters" />
       <module name="SpeedDetectorAnalyzer" options="-parameters" />
       <module name="commons" options="-parameters" />
       <module name="statistics" options="-parameters" />

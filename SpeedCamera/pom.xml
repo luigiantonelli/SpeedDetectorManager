@@ -49,6 +49,9 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <imageName>speed-camera</imageName>
+                </configuration>
             </plugin>
         </plugins>
         <pluginManagement>
