@@ -6,8 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="59f6767e-00c2-4df1-af5d-1055c2838036" name="Changes" comment="added admin queue">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics/src/main/java/scala/Support.scala" beforeDir="false" afterPath="$PROJECT_DIR$/statistics/src/main/java/scala/Support.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics/src/main/java/scala/Utils.scala" beforeDir="false" afterPath="$PROJECT_DIR$/statistics/src/main/java/scala/Utils.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file.txt" beforeDir="false" afterPath="$PROJECT_DIR$/file.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/statistics/src/main/java/javastatistics/Consumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/statistics/src/main/java/javastatistics/Consumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/statistics/src/main/java/javastatistics/MainStatistics.java" beforeDir="false" afterPath="$PROJECT_DIR$/statistics/src/main/java/javastatistics/MainStatistics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/statistics/src/main/java/scala/Detection.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statistics/src/main/java/scala/Hello.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statistics/src/main/java/scala/Support.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statistics/src/main/java/scala/Utils.scala" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +101,7 @@
       <command value="mvn  clean install -DskipTests" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.Application">
+  <component name="RunManager" selected="Application.MainStatistics">
     <configuration name="Application" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.application.Application" />
       <module name="PublicAdministrationInterface" />
@@ -212,8 +217,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Hello" />
         <item itemvalue="Application.MainStatistics" />
+        <item itemvalue="Application.Hello" />
         <item itemvalue="Application.FinesManagementApplication" />
         <item itemvalue="Application.SpeedDetectorAnalyzerApplication" />
       </list>

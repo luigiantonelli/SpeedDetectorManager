@@ -1,11 +1,11 @@
 package javastatistics;
 
 
-/*import it.uniroma1.commons.queue.handler.DetectionHandler;
+// import it.uniroma1.commons.queue.handler.DetectionHandler;
 import it.uniroma1.commons.queue.handler.MessageHandler;
-import it.uniroma1.commons.queue.object.Detection;*/
-/*import org.apache.activemq.ActiveMQConnectionFactory;
-import javax.jms.*;*/
+import it.uniroma1.commons.queue.object.Detection;
+import org.apache.activemq.ActiveMQConnectionFactory;
+import javax.jms.*;
 
 import com.google.gson.Gson;
 import it.uniroma1.commons.queue.object.DetectionExt;
@@ -51,7 +51,8 @@ public class Consumer {
             Destination destination = session.createQueue(queue);
             // Create a MessageConsumer from the Session to the Topic or Queue
             MessageConsumer consumer = session.createConsumer(destination);
-
+            String detections = "";
+            int counter = 0;
             while (true) {
                 // Wait for a message
                 Message message = consumer.receive();
@@ -63,21 +64,14 @@ public class Consumer {
 
                     Gson gson = new Gson();
                     DetectionExt d = gson.fromJson(text, DetectionExt.class);
-                    FileWriter file = null;
-                    try {
-                        file = new FileWriter("file.txt", true);
-                        file.write(d.toString() + "\n");
-                        file.flush();
-                    } catch (IOException e) {
-                        e.printStackTrace();
+                    detections += d.toString() + "\n";
+                    counter++;
+                    if(counter == 100){//DIMINUISCI PER FARE PROVE
+                        Support.executeQueries(detections);
+                        detections = "";
+                        counter = 0;
                     }
-                    {
-                        try {
-                            file.close();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    }
+
                 } else {
                     System.out.println(Thread.currentThread().getName() + " | message: " + message);
                 }

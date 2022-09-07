@@ -1,8 +1,9 @@
-package scala
+package javastatistics
 
 import it.uniroma1.commons.queue.enums.{CarType, FuelType, RoadType}
 import scala.collection.immutable
 import scala.List
+import io.circe.parser.decode
 object Support {
   def detectionFromString(v: List[String]): Detection = {
     var ct = CarType.SUV
@@ -40,7 +41,20 @@ object Support {
     new Detection(v(0).toLong, v(1).toLong, v(2).toInt, v(3), ct, ft, v(6), rt, v(8).toBoolean)
   }
 
-  def executeQueries(l: List[Detection]) = {
+  def executeQueries(list: String) = {
+
+    var l: List[Detection] = Nil
+    list.split("\n").foreach(t => {
+      val out = decode[List[String]](t)
+      println(out)
+      out match {
+        case Left(value) => println("ERRORE")
+        case Right(value) => {
+          l = Support.detectionFromString(value) :: l
+        }
+      }
+    })
+
     println("Autovelox più attivo: " + Utils.mostActiveSpeedCamera(l))
     println("Velocità più alta raggiunta: " + Utils.highestSpeed(l))
     println("Regione più trafficata: " + Utils.busiestRegion(l))

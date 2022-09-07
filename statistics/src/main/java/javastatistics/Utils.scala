@@ -1,4 +1,4 @@
-package scala
+package javastatistics
 
 import it.uniroma1.commons.queue.enums.{CarType, FuelType, RoadType}
 import scala.collection.immutable

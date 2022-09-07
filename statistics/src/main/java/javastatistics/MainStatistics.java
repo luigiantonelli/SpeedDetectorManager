@@ -9,6 +9,10 @@ import org.json.JSONObject;*/
 
 //import javax.jms.JMSException;
 
+import it.uniroma1.commons.queue.enums.CarType;
+import it.uniroma1.commons.queue.enums.FuelType;
+import it.uniroma1.commons.queue.enums.RoadType;
+import it.uniroma1.commons.queue.object.DetectionExt;
 import it.uniroma1.commons.utility.ParamConnection;
 
 import javax.jms.JMSException;
@@ -17,7 +21,7 @@ import java.util.concurrent.Executors;
 
 public class MainStatistics {
 
-    public static void main(String[] args) throws JMSException {
+    public static void main(String[] args) /*throws JMSException*/ {
         consmeMsg(1);
     }
 
